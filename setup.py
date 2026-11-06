@@ -218,11 +218,10 @@ def main(argv):
             long_description=long_description,
             long_description_content_type='text/markdown',
 
-            url='https://github.com/shayanheidari01/SPlusthon',
-            download_url='https://github.com/shayanheidari01/SPlusthon/releases',
+            url='https://github.com/P3dro-Im/Wyngthon',
+            download_url='https://github.com/P3dro-Im/Wyngthon/releases',
 
-            author='ShayanHeidari',
-            author_email='contact@shayanheidari.info',
+            author='Pedro',
 
             license='GPL-3.0',
 

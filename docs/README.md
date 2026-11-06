@@ -116,5 +116,5 @@ mkdocs gh-deploy
 
 ## پشتیبانی
 
-- [GitHub Issues](https://github.com/shayanheidari01/SPlusthon/issues/)
+- [GitHub Issues](https://github.com/P3dro-Im/Wyngthon/issues/)
 - [مستندات کامل API](https://tl.splusthon.dev/)

@@ -20,7 +20,7 @@ pip install wyngthon
 ### چگونه نسخه توسعه‌دهنده را نصب کنم؟
 
 ```bash
-pip install --upgrade https://github.com/shayanheidari01/SPlusthon/archive/v1.zip
+pip install --upgrade https://github.com/P3dro-Im/Wyngthon/archive/refs/heads/main.zip
 ```
 
 ### چگونه نصب را تأیید کنم؟
@@ -294,7 +294,7 @@ Wyngthon یک کتابخانه شخص ثالث است. مراقب باشید:
 
 ### چگونه باگ گزارش کنم؟
 
-به [GitHub Issues](https://github.com/shayanheidari01/SPlusthon/issues/) بروید و باگ جدید ایجاد کنید.
+به [GitHub Issues](https://github.com/P3dro-Im/Wyngthon/issues/) بروید و باگ جدید ایجاد کنید.
 
 ### چگونه مشارکت کنم؟
 
@@ -305,7 +305,7 @@ Wyngthon یک کتابخانه شخص ثالث است. مراقب باشید:
 ### چگونه مستندات را مطالعه کنم؟
 
 - [مرجع کامل API](https://tl.splusthon.dev/)
-- [GitHub Wyngthon](https://github.com/shayanheidari01/SPlusthon)
+- [GitHub Wyngthon](https://github.com/P3dro-Im/Wyngthon)
 
 ---
 

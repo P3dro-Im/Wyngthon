@@ -24,30 +24,30 @@
 </a>
 
 <a href="LICENSE">
-  <img src="https://img.shields.io/github/license/shayanheidari01/SPlusthon?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/github/license/P3dro-Im/Wyngthon?style=for-the-badge" alt="License">
 </a>
 
-<a href="https://github.com/shayanheidari01/SPlusthon/stargazers">
-  <img src="https://img.shields.io/github/stars/shayanheidari01/SPlusthon?style=for-the-badge" alt="Stars">
+<a href="https://github.com/P3dro-Im/Wyngthon/stargazers">
+  <img src="https://img.shields.io/github/stars/P3dro-Im/Wyngthon?style=for-the-badge" alt="Stars">
 </a>
 
-<a href="https://github.com/shayanheidari01/SPlusthon/issues">
-  <img src="https://img.shields.io/github/issues/shayanheidari01/SPlusthon?style=for-the-badge" alt="Issues">
+<a href="https://github.com/P3dro-Im/Wyngthon/issues">
+  <img src="https://img.shields.io/github/issues/P3dro-Im/Wyngthon?style=for-the-badge" alt="Issues">
 </a>
 
-<a href="https://github.com/shayanheidari01/SPlusthon/actions">
-  <img src="https://img.shields.io/github/actions/workflow/status/shayanheidari01/SPlusthon/tests.yml?style=for-the-badge" alt="Build">
+<a href="https://github.com/P3dro-Im/Wyngthon/actions">
+  <img src="https://img.shields.io/github/actions/workflow/status/P3dro-Im/Wyngthon/tests.yml?style=for-the-badge" alt="Build">
 </a>
 
 </p>
 
 <p>
 
-<a href="https://shayanheidari01.github.io/SPlusthon/"><strong>Documentation</strong></a>
+<a href="https://p3dro-im.github.io/Wyngthon/"><strong>Documentation</strong></a>
 •
 <a href="https://pypi.org/project/splusthon/"><strong>PyPI</strong></a>
 •
-<a href="https://github.com/shayanheidari01/SPlusthon"><strong>GitHub</strong></a>
+<a href="https://github.com/P3dro-Im/Wyngthon"><strong>GitHub</strong></a>
 •
 <a href="https://web.splus.ir"><strong>Soroush Plus</strong></a>
 
@@ -93,7 +93,7 @@ pip install wyngthon
 یا آخرین نسخه توسعه:
 
 ```bash
-pip install git+https://github.com/shayanheidari01/SPlusthon.git
+pip install git+https://github.com/P3dro-Im/Wyngthon.git
 ```
 
 ## شروع سریع
@@ -174,7 +174,7 @@ with WyngClient(StringSession(session)) as client:
 
 مستندات کامل پروژه:
 
-https://shayanheidari01.github.io/SPlusthon/
+https://p3dro-im.github.io/Wyngthon/
 
 ## مجوز
 
@@ -184,8 +184,8 @@ https://shayanheidari01.github.io/SPlusthon/
 
 <div align="center">
 
-**Made with ❤️ by Shayan Heidari**
+**Made with ❤️ by Pedro**
 
-https://github.com/shayanheidari01
+https://github.com/P3dro-Im
 
 </div>

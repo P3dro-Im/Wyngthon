@@ -187,7 +187,7 @@ client = WyngClient(StringSession(session_string), api_id, api_hash)
 
 - [قوانین سروش‌پلاس](https://web.splus.ir/terms)
 - [API مستندات سروش‌پلاس](https://core.splus.ir/)
-- [GitHub Wyngthon](https://github.com/shayanheidari01/SPlusthon)
+- [GitHub Wyngthon](https://github.com/P3dro-Im/Wyngthon)
 
 ---
 

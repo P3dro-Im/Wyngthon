@@ -20,7 +20,7 @@ You can also define the following environment variables to avoid doing so:
 
 You may download all and run any example by typing in a terminal:
 ```sh
-git clone https://github.com/shayanheidari01/SPlusthon.git
+git clone https://github.com/P3dro-Im/Wyngthon.git
 cd Wyngthon
 cd wyngthon_examples
 python3 gui.py
@@ -136,7 +136,7 @@ assumes some [`asyncio`] knowledge, but otherwise is easy to follow.
 
 ![Screenshot of the tkinter GUI][tkinter GUI]
 
-### [`payment.py`](https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/payment.py)
+### [`payment.py`](https://raw.githubusercontent.com/P3dro-Im/Wyngthon/main/wyngthon_examples/payment.py)
 
 * Usable as: **bot**.
 * Difficulty: **medium**.
@@ -149,19 +149,19 @@ You'll need to obtain a "provider token" to use this example, so please read [So
 It makes use of the ["raw API"](https://tl.splusthon.dev) (that is, no friendly `client.` methods), which can be helpful in understanding how it works and how it can be used.
 
 
-[Wyngthon]: https://github.com/shayanheidari01/SPlusthon
-[CC0 License]: https://github.com/shayanheidari01/SPlusthon/blob/v1/splusthon_examples/LICENSE
+[Wyngthon]: https://github.com/P3dro-Im/Wyngthon
+[CC0 License]: https://github.com/P3dro-Im/Wyngthon/blob/main/wyngthon_examples/LICENSE
 [@BotFather]: https://t.me/BotFather
-[`assistant.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/assistant.py
-[`quart_login.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/quart_login.py
-[`gui.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/gui.py
-[`interactive_wyng_client.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/interactive_wyng_client.py
-[`print_messages.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/print_messages.py
-[`print_updates.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/print_updates.py
-[`replier.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/replier.py
+[`assistant.py`]: https://raw.githubusercontent.com/P3dro-Im/Wyngthon/main/wyngthon_examples/assistant.py
+[`quart_login.py`]: https://raw.githubusercontent.com/P3dro-Im/Wyngthon/main/wyngthon_examples/quart_login.py
+[`gui.py`]: https://raw.githubusercontent.com/P3dro-Im/Wyngthon/main/wyngthon_examples/gui.py
+[`interactive_wyng_client.py`]: https://raw.githubusercontent.com/P3dro-Im/Wyngthon/main/wyngthon_examples/interactive_wyng_client.py
+[`print_messages.py`]: https://raw.githubusercontent.com/P3dro-Im/Wyngthon/main/wyngthon_examples/print_messages.py
+[`print_updates.py`]: https://raw.githubusercontent.com/P3dro-Im/Wyngthon/main/wyngthon_examples/print_updates.py
+[`replier.py`]: https://raw.githubusercontent.com/P3dro-Im/Wyngthon/main/wyngthon_examples/replier.py
 [@SPlusthonianBot]: https://t.me/SPlusthonianBot
 [official Wyngthon's chat]: https://t.me/SPlusthonChat
 [`asyncio`]: https://docs.python.org/3/library/asyncio.html
 [`tkinter`]: https://docs.python.org/3/library/tkinter.html
-[tkinter GUI]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/screenshot-gui.jpg
+[tkinter GUI]: https://raw.githubusercontent.com/P3dro-Im/Wyngthon/main/wyngthon_examples/screenshot-gui.jpg
 [`events.NewMessage`]: https://docs.splusthon.dev/en/stable/modules/events.html#splusthon.events.newmessage.NewMessage

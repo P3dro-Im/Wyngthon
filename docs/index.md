@@ -107,6 +107,6 @@ async def handler(event):
 
 ## لینک‌های مفید
 
-- [GitHub](https://github.com/shayanheidari01/SPlusthon)
+- [GitHub](https://github.com/P3dro-Im/Wyngthon)
 - [سروش‌پلاس](https://web.splus.ir)
 - [مرجع کامل API](https://tl.splusthon.dev/)

@@ -378,4 +378,4 @@ string = client.session.save()
 ## منابع
 
 - [مرجع کامل API](https://tl.splusthon.dev/)
-- [GitHub Wyngthon](https://github.com/shayanheidari01/SPlusthon)
+- [GitHub Wyngthon](https://github.com/P3dro-Im/Wyngthon)

@@ -92,5 +92,5 @@ body:
           required: true
         - label: I have searched for this issue before posting it and there isn't an open duplicate.
           required: true
-        - label: I ran `pip install -U https://github.com/shayanheidari01/SPlusthon/archive/v1.zip` and triggered the bug in the latest version.
+        - label: I ran `pip install -U https://github.com/P3dro-Im/Wyngthon/archive/refs/heads/main.zip` and triggered the bug in the latest version.
           required: true

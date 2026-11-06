@@ -37,7 +37,7 @@ python3 -m pip install --upgrade wyngthon
 اگر می‌خواهید آخرین تغییرات منتشر نشده را داشته باشید:
 
 ```bash
-python3 -m pip install --upgrade https://github.com/shayanheidari01/SPlusthon/archive/v1.zip
+python3 -m pip install --upgrade https://github.com/P3dro-Im/Wyngthon/archive/refs/heads/main.zip
 ```
 
 !!! warning "هشدار"
