@@ -214,7 +214,7 @@ def main(argv):
         setup(
             name='Wyngthon',
             version=version,
-            description="Soroush Plus library for Python",
+            description="Wyng library for Python",
             long_description=long_description,
             long_description_content_type='text/markdown',
 
@@ -228,7 +228,7 @@ def main(argv):
             # See https://stackoverflow.com/a/40300957/4759433
             # -> https://www.python.org/dev/peps/pep-0345/#requires-python
             # -> http://setuptools.readthedocs.io/en/latest/setuptools.html
-            python_requires='>=3.5',
+            python_requires='>=3.7',
 
             # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
             classifiers=[
@@ -243,10 +243,12 @@ def main(argv):
                 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
 
                 'Programming Language :: Python :: 3',
-                'Programming Language :: Python :: 3.5',
-                'Programming Language :: Python :: 3.6',
                 'Programming Language :: Python :: 3.7',
                 'Programming Language :: Python :: 3.8',
+                'Programming Language :: Python :: 3.9',
+                'Programming Language :: Python :: 3.10',
+                'Programming Language :: Python :: 3.11',
+                'Programming Language :: Python :: 3.12',
             ],
             keywords='telegram api chat client library messaging mtproto',
             packages=find_packages(exclude=[

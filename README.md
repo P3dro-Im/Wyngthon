@@ -180,6 +180,8 @@ https://p3dro-im.github.io/Wyngthon/
 
 این پروژه تحت مجوز **GNU GPL v3** منتشر شده است.
 
+بخش‌هایی از این پروژه از **Telethon** (مجوز MIT) گرفته شده است؛ متن آن در فایل [NOTICE](NOTICE) آمده است.
+
 ---
 
 <div align="center">
