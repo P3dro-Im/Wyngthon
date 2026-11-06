@@ -13,7 +13,7 @@ hide:
 
 ### روش ساده (بدون API ID و Hash)
 
-Wyngthon دارای API credentials پیش‌فرض برای سروش‌پلاس است، بنابراین می‌توانید بدون دریافت کلیدهای خود، کلاینت ایجاد کنید:
+Wyngthon دارای API credentials پیش‌فرض برای وینگ است، بنابراین می‌توانید بدون دریافت کلیدهای خود، کلاینت ایجاد کنید:
 
 ```python
 from wyngthon import WyngClient, events, sync

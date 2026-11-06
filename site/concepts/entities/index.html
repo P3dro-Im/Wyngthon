@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="مستندات کتابخانه UserBot برای سروش‌پلاس">
+        <meta name="description" content="مستندات کتابخانه UserBot برای وینگ">
       
       
       
@@ -1601,10 +1601,10 @@
 <hr />
 <h2 id="entity-input-entity">Entity در مقابل Input Entity<a class="headerlink" href="#entity-input-entity" title="Permanent link">&para;</a></h2>
 <h3 id="peer-inputpeer">Peer و InputPeer<a class="headerlink" href="#peer-inputpeer" title="Permanent link">&para;</a></h3>
-<p>روی تایپ‌های عادی، API همچنین از نسخه‌های <code>Input*</code> استفاده می‌کند. نسخه input یک Entity (مانند <code>InputPeerUser</code>، <code>InputChat</code> و غیره) فقط حداقل اطلاعاتی را که از سروش‌پلاس نیاز است برای شناسایی اینکه به چه کسی اشاره می‌کنید، دارد: <strong>شناسه</strong> و <strong>hash</strong> یک <code>Peer</code>.</p>
+<p>روی تایپ‌های عادی، API همچنین از نسخه‌های <code>Input*</code> استفاده می‌کند. نسخه input یک Entity (مانند <code>InputPeerUser</code>، <code>InputChat</code> و غیره) فقط حداقل اطلاعاتی را که از وینگ نیاز است برای شناسایی اینکه به چه کسی اشاره می‌کنید، دارد: <strong>شناسه</strong> و <strong>hash</strong> یک <code>Peer</code>.</p>
 <p>شناسه Entity برای تمام کاربران و حساب‌های ربات یکسان است، اما hash <strong>برای هر حساب متفاوت است</strong>، بنابراین سعی نکنید hash access را از یک حساب در حساب دیگر استفاده کنید زیرا <strong>کار نخواهد کرد</strong>.</p>
 <h3 id="peer">Peer‌ها<a class="headerlink" href="#peer" title="Permanent link">&para;</a></h3>
-<p>بعضی اوقات، سروش‌پلاس فقط نیاز دارد نوع Entity را همراه با شناسه‌اش مشخص کند. برای این منظور، نسخه‌های <code>Peer</code> از Entity‌ها نیز وجود دارند که فقط شناسه دارند. نمی‌توانید hash را از آنها بگیرید زیرا نباید به آن نیاز داشته باشید. کتابخانه احتمالاً قبلاً آن را کش کرده است.</p>
+<p>بعضی اوقات، وینگ فقط نیاز دارد نوع Entity را همراه با شناسه‌اش مشخص کند. برای این منظور، نسخه‌های <code>Peer</code> از Entity‌ها نیز وجود دارند که فقط شناسه دارند. نمی‌توانید hash را از آنها بگیرید زیرا نباید به آن نیاز داشته باشید. کتابخانه احتمالاً قبلاً آن را کش کرده است.</p>
 <p>Peers برای شناسایی یک Entity کافی هستند، اما برای ارسال درخواست با آنها کافی نیستند. باید hash آنها را بدانید قبل از اینکه بتوانید "از آنها استفاده کنید" و برای دانستن hash باید Entity را "ملاقات کنید"، چه در مکالمات، شرکت‌کنندگان، پیام‌های فوروارد شده و غیره.</p>
 <div class="admonition note">
 <p class="admonition-title">یادداشت</p>
