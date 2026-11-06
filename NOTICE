@@ -7,6 +7,15 @@ Free Software Foundation. See the LICENSE file for the full text.
 
 ----------------------------------------------------------------------------
 
+This project began as a fork of SPlusthon
+(https://github.com/shayanheidari01/SPlusthon) by Shayan Heidari, which is
+distributed under the GNU General Public License, version 3. Parts of the
+documentation, examples, code generator, tests and project layout in this
+repository originate from SPlusthon and remain subject to that license.
+Copyright (C) Shayan Heidari and the SPlusthon contributors for those parts.
+
+----------------------------------------------------------------------------
+
 This project includes code derived from Telethon
 (https://github.com/LonamiWebs/Telethon), which is distributed under the
 MIT License. The original copyright and permission notice is reproduced

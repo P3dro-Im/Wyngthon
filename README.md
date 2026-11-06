@@ -180,7 +180,7 @@ https://p3dro-im.github.io/Wyngthon/
 
 این پروژه تحت مجوز **GNU GPL v3** منتشر شده است.
 
-بخش‌هایی از این پروژه از **Telethon** (مجوز MIT) گرفته شده است؛ متن آن در فایل [NOTICE](NOTICE) آمده است.
+این پروژه در ابتدا فورکی از [SPlusthon](https://github.com/shayanheidari01/SPlusthon) ساخته‌ی Shayan Heidari (مجوز GPLv3) بوده و بخش‌هایی از آن از **Telethon** (مجوز MIT) گرفته شده است؛ جزئیات در فایل [NOTICE](NOTICE) آمده است.
 
 ---
 
