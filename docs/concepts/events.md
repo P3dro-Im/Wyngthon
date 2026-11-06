@@ -14,7 +14,7 @@ hide:
 بیایید با یک مثال برای پاسخ خودکار شروع کنیم:
 
 ```python
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 client = SoroushClient('anon', api_id, api_hash)
 
@@ -32,7 +32,7 @@ client.run_until_disconnected()
 ### ایجاد کلاینت
 
 ```python
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 client = SoroushClient('anon', api_id, api_hash)
 ```
@@ -58,7 +58,7 @@ async def my_event_handler(event):
 اگر رویداد `NewMessage` رخ دهد و `'hello'` در متن پیام باشد، ما به رویداد با پیام `'hi!'` پاسخ می‌دهیم.
 
 !!! note "یادداشت"
-    handler‌های رویداد **باید** `async def` باشند. در نهایت، SPlusthon یک کتابخانه ناهمگام بر پایه asyncio است که رویکرد ایمن‌تر و اغلب سریع‌تری نسبت به threads است.
+    handler‌های رویداد **باید** `async def` باشند. در نهایت، Wyngthon یک کتابخانه ناهمگام بر پایه asyncio است که رویکرد ایمن‌تر و اغلب سریع‌تری نسبت به threads است.
 >
 > **باید** تمام فراخوانی‌های متدی که از درخواست شبکه استفاده می‌کنند را `await` کنید، که بیشتر آنها هستند.
 

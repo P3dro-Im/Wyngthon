@@ -5,7 +5,7 @@ hide:
 
 # Mastering asyncio
 
-SPlusthon بر پایه asyncio ساخته شده است. برای استفاده مؤثر از کتابخانه، باید مفاهیم پایه asyncio را درک کنید.
+Wyngthon بر پایه asyncio ساخته شده است. برای استفاده مؤثر از کتابخانه، باید مفاهیم پایه asyncio را درک کنید.
 
 ---
 
@@ -55,13 +55,13 @@ asyncio.run(main())
 
 ---
 
-## استفاده از asyncio در SPlusthon
+## استفاده از asyncio در Wyngthon
 
 ### ساختار پایه
 
 ```python
 import asyncio
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     client = SoroushClient('anon', api_id, api_hash)
@@ -81,7 +81,7 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -96,7 +96,7 @@ asyncio.run(main())
 ### استفاده از client.loop
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 client = SoroushClient('anon', api_id, api_hash)
 
@@ -118,7 +118,7 @@ with client:
 
 ```python
 import asyncio
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -134,7 +134,7 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -151,7 +151,7 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 client = SoroushClient('anon', api_id, api_hash)
 
@@ -287,7 +287,7 @@ async def main():
 
 ## نتیجه‌گیری
 
-asyncio یک ابزار قدرتمند برای نوشتن کد ناهمگام در پایتون است. با درک مفاهیم پایه مانند coroutine، await و event loop، می‌توانید به طور مؤثر از SPlusthon استفاده کنید.
+asyncio یک ابزار قدرتمند برای نوشتن کد ناهمگام در پایتون است. با درک مفاهیم پایه مانند coroutine، await و event loop، می‌توانید به طور مؤثر از Wyngthon استفاده کنید.
 
 ---
 

@@ -5,7 +5,7 @@ hide:
 
 # API کامل
 
-SPlusthon از API کامل سروش‌پلاس پشتیبانی می‌کند. می‌توانید از متدهای پیشرفته برای کنترل دقیق‌تر استفاده کنید.
+Wyngthon از API کامل سروش‌پلاس پشتیبانی می‌کند. می‌توانید از متدهای پیشرفته برای کنترل دقیق‌تر استفاده کنید.
 
 ---
 
@@ -14,7 +14,7 @@ SPlusthon از API کامل سروش‌پلاس پشتیبانی می‌کند. 
 ### ارسال درخواست خام
 
 ```python
-from splusthon.tl.functions.messages import SendMessageRequest
+from wyngthon.tl.functions.messages import SendMessageRequest
 
 await client(SendMessageRequest(
     peer='username',
@@ -26,7 +26,7 @@ await client(SendMessageRequest(
 ### دریافت اطلاعات کاربر
 
 ```python
-from splusthon.tl.functions.users import GetUsersRequest
+from wyngthon.tl.functions.users import GetUsersRequest
 
 users = await client(GetUsersRequest(
     id=['username1', 'username2']
@@ -36,7 +36,7 @@ users = await client(GetUsersRequest(
 ### دریافت اطلاعات کانال
 
 ```python
-from splusthon.tl.functions.channels import GetFullChannelRequest
+from wyngthon.tl.functions.channels import GetFullChannelRequest
 
 full_channel = await client(GetFullChannelRequest('channel_username'))
 ```
@@ -48,8 +48,8 @@ full_channel = await client(GetFullChannelRequest('channel_username'))
 ### ارسال فایل با کنترل کامل
 
 ```python
-from splusthon.tl.functions.messages import SendMediaRequest
-from splusthon.tl.types import InputMediaUploadedDocument
+from wyngthon.tl.functions.messages import SendMediaRequest
+from wyngthon.tl.types import InputMediaUploadedDocument
 
 # آپلود فایل
 file = await client.upload_file('/path/to/file.jpg')
@@ -68,7 +68,7 @@ await client(SendMediaRequest(
 ### ویرایش پیام
 
 ```python
-from splusthon.tl.functions.messages import EditMessageRequest
+from wyngthon.tl.functions.messages import EditMessageRequest
 
 await client(EditMessageRequest(
     peer='username',
@@ -80,7 +80,7 @@ await client(EditMessageRequest(
 ### حذف پیام
 
 ```python
-from splusthon.tl.functions.messages import DeleteMessagesRequest
+from wyngthon.tl.functions.messages import DeleteMessagesRequest
 
 await client(DeleteMessagesRequest(
     id=[message_id_1, message_id_2],
@@ -95,7 +95,7 @@ await client(DeleteMessagesRequest(
 ### عضویت در کانال
 
 ```python
-from splusthon.tl.functions.channels import JoinChannelRequest
+from wyngthon.tl.functions.channels import JoinChannelRequest
 
 await client(JoinChannelRequest(channel))
 ```
@@ -103,7 +103,7 @@ await client(JoinChannelRequest(channel))
 ### خروج از کانال
 
 ```python
-from splusthon.tl.functions.channels import LeaveChannelRequest
+from wyngthon.tl.functions.channels import LeaveChannelRequest
 
 await client(LeaveChannelRequest(input_channel))
 ```
@@ -111,7 +111,7 @@ await client(LeaveChannelRequest(input_channel))
 ### عضویت با لینک دعوت
 
 ```python
-from splusthon.tl.functions.messages import ImportChatInviteRequest
+from wyngthon.tl.functions.messages import ImportChatInviteRequest
 
 updates = await client(ImportChatInviteRequest('AAAAAEHbEkejzxUjAUCfYg'))
 ```
@@ -119,7 +119,7 @@ updates = await client(ImportChatInviteRequest('AAAAAEHbEkejzxUjAUCfYg'))
 ### اضافه کردن کاربر به چت
 
 ```python
-from splusthon.tl.functions.messages import AddChatUserRequest
+from wyngthon.tl.functions.messages import AddChatUserRequest
 
 await client(AddChatUserRequest(
     chat_id,
@@ -131,7 +131,7 @@ await client(AddChatUserRequest(
 ### اضافه کردن کاربر به کانال
 
 ```python
-from splusthon.tl.functions.channels import InviteToChannelRequest
+from wyngthon.tl.functions.channels import InviteToChannelRequest
 
 await client(InviteToChannelRequest(
     channel,
@@ -146,7 +146,7 @@ await client(InviteToChannelRequest(
 ### دریافت اطلاعات کامل کاربر
 
 ```python
-from splusthon.tl.functions.users import GetFullUserRequest
+from wyngthon.tl.functions.users import GetFullUserRequest
 
 full = await client(GetFullUserRequest(user))
 bio = full.full_user.about
@@ -155,7 +155,7 @@ bio = full.full_user.about
 ### بروزرسانی نام و بیوگرافی
 
 ```python
-from splusthon.tl.functions.account import UpdateProfileRequest
+from wyngthon.tl.functions.account import UpdateProfileRequest
 
 await client(UpdateProfileRequest(
     first_name='نام جدید',
@@ -167,7 +167,7 @@ await client(UpdateProfileRequest(
 ### بروزرسانی یوزرنیم
 
 ```python
-from splusthon.tl.functions.account import UpdateUsernameRequest
+from wyngthon.tl.functions.account import UpdateUsernameRequest
 
 await client(UpdateUsernameRequest('new_username'))
 ```
@@ -175,7 +175,7 @@ await client(UpdateUsernameRequest('new_username'))
 ### بروزرسانی عکس پروفایل
 
 ```python
-from splusthon.tl.functions.photos import UploadProfilePhotoRequest
+from wyngthon.tl.functions.photos import UploadProfilePhotoRequest
 
 await client(UploadProfilePhotoRequest(
     await client.upload_file('/path/to/photo.jpg')
@@ -221,7 +221,7 @@ file = await client.upload_file('/path/to/file.jpg')
 ### جستجوی پیام‌ها
 
 ```python
-from splusthon.tl.functions.messages import SearchRequest
+from wyngthon.tl.functions.messages import SearchRequest
 
 messages = await client(SearchRequest(
     peer='username',
@@ -233,8 +233,8 @@ messages = await client(SearchRequest(
 ### دریافت شرکت‌کنندگان گروه
 
 ```python
-from splusthon.tl.functions.channels import GetParticipantsRequest
-from splusthon.tl.types import ChannelParticipantsSearch
+from wyngthon.tl.functions.channels import GetParticipantsRequest
+from wyngthon.tl.types import ChannelParticipantsSearch
 
 participants = await client(GetParticipantsRequest(
     channel='username',
@@ -247,7 +247,7 @@ participants = await client(GetParticipantsRequest(
 ### افزایش تعداد بازدید در کانال
 
 ```python
-from splusthon.tl.functions.messages import GetMessagesViewsRequest
+from wyngthon.tl.functions.messages import GetMessagesViewsRequest
 
 await client(GetMessagesViewsRequest(
     peer=channel,

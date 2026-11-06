@@ -77,7 +77,7 @@ friend  = await client.get_entity(friend_id)
 entity = await client.get_entity(some_id)
 
 # می‌توانید نوع را صریح‌تر مشخص کنید با پیچیدن آن در یک Peer
-from splusthon.tl.types import PeerUser, PeerChat, PeerChannel
+from wyngthon.tl.types import PeerUser, PeerChat, PeerChannel
 
 my_user    = await client.get_entity(PeerUser(some_id))
 my_chat    = await client.get_entity(PeerChat(some_id))

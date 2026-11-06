@@ -5,7 +5,7 @@ hide:
 
 # شروع سریع
 
-راهنمای سریع برای شروع کار با SPlusthon. در این بخش یاد می‌گیرید چگونه اولین کلاینت خود را ایجاد کرده و عملیات اساسی را انجام دهید.
+راهنمای سریع برای شروع کار با Wyngthon. در این بخش یاد می‌گیرید چگونه اولین کلاینت خود را ایجاد کرده و عملیات اساسی را انجام دهید.
 
 ---
 
@@ -13,11 +13,11 @@ hide:
 
 ### روش ساده (بدون API ID و Hash)
 
-SPlusthon دارای API credentials پیش‌فرض برای سروش‌پلاس است، بنابراین می‌توانید بدون دریافت کلیدهای خود، کلاینت ایجاد کنید:
+Wyngthon دارای API credentials پیش‌فرض برای سروش‌پلاس است، بنابراین می‌توانید بدون دریافت کلیدهای خود، کلاینت ایجاد کنید:
 
 ```python
-from splusthon import SoroushClient, events, sync
-from splusthon.sessions import StringSession
+from wyngthon import SoroushClient, events, sync
+from wyngthon.sessions import StringSession
 
 # بدون نیاز به api_id یا api_hash
 client = SoroushClient(StringSession())
@@ -29,7 +29,7 @@ client.start()
 برای استفاده استاندارد، ابتدا باید API ID و Hash خود را از [my.telegram.org](https://my.telegram.org/) دریافت کنید:
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 api_id = 12345
 api_hash = '0123456789abcdef0123456789abcdef'
@@ -40,7 +40,7 @@ with SoroushClient('anon', api_id, api_hash) as client:
 ```
 
 !!! important "مهم"
-    از نام‌گذاری فایل اسکریپت خود به نام `splusthon.py` خودداری کنید! پایتون سعی می‌کند کلاینت را از آن فایل import کند و با خطا مواجه می‌شود.
+    از نام‌گذاری فایل اسکریپت خود به نام `wyngthon.py` خودداری کنید! پایتون سعی می‌کند کلاینت را از آن فایل import کند و با خطا مواجه می‌شود.
 
 ---
 
@@ -67,7 +67,7 @@ await client.send_message('+989123456789', 'سلام، دوست من!')
 ### ارسال به یوزرنیم
 
 ```python
-await client.send_message('username', 'تست SPlusthon!')
+await client.send_message('username', 'تست Wyngthon!')
 ```
 
 ### ارسال با قالب‌بندی
@@ -148,7 +148,7 @@ async for message in client.iter_messages('me'):
 در اینجا یک مثال کامل برای شروع سریع آورده شده است:
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 api_id = 12345
 api_hash = '0123456789abcdef0123456789abcdef'
@@ -178,7 +178,7 @@ async def main():
     await client.send_message('+989123456789', 'سلام، دوست من!')
     
     # ارسال پیام به یوزرنیم
-    await client.send_message('username', 'تست SPlusthon!')
+    await client.send_message('username', 'تست Wyngthon!')
     
     # ارسال با قالب‌بندی
     message = await client.send_message(
@@ -211,7 +211,7 @@ with client:
 ## نکات مهم
 
 !!! tip "نکته"
-    SPlusthon یک کتابخانه ناهمگام (async) است و باید با asyncio کار کنید. به طور کلی، تمام کد خود را در داخل یک تابع `async def` بنویسید:
+    Wyngthon یک کتابخانه ناهمگام (async) است و باید با asyncio کار کنید. به طور کلی، تمام کد خود را در داخل یک تابع `async def` بنویسید:
 
 ```python
 client = ...

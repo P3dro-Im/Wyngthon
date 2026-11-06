@@ -77,7 +77,7 @@ MTProto پروتکل اصلی سروش‌پلاس است. با استفاده ا
 ### مثال Bot API
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 # ورود به عنوان ربات
 bot = SoroushClient('bot', api_id, api_hash)
@@ -105,7 +105,7 @@ await bot.run_until_disconnected()
 ### مثال MTProto (UserBot)
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 # ورود به عنوان کاربر
 client = SoroushClient('user', api_id, api_hash)

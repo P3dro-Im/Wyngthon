@@ -6,7 +6,7 @@ https://packaging.python.org/en/latest/distributing.html
 https://github.com/pypa/sampleproject
 
 Extra supported commands are:
-* gen, to generate the classes required for SPlusthon to run or docs
+* gen, to generate the classes required for Wyngthon to run or docs
 * pypi, to generate sdist, bdist_wheel, and push to PyPi
 """
 
@@ -46,8 +46,8 @@ class TempWorkDir:
 
 API_REF_URL = 'https://tl.splusthon.dev/'
 
-GENERATOR_DIR = Path('splusthon_generator')
-LIBRARY_DIR = Path('splusthon')
+GENERATOR_DIR = Path('wyngthon_generator')
+LIBRARY_DIR = Path('wyngthon')
 
 ERRORS_IN = GENERATOR_DIR / 'data/errors.csv'
 ERRORS_OUT = LIBRARY_DIR / 'errors/rpcerrorlist.py'
@@ -66,10 +66,10 @@ DOCS_OUT = Path('docs')
 
 
 def generate(which, action='gen'):
-    from splusthon_generator.parsers import\
+    from wyngthon_generator.parsers import\
         parse_errors, parse_methods, parse_tl, find_layer
 
-    from splusthon_generator.generators import\
+    from wyngthon_generator.generators import\
         generate_errors, generate_tlobjects, generate_docs, clean_tlobjects
 
     layer = next(filter(None, map(find_layer, TLOBJECT_IN_TLS)))
@@ -166,7 +166,7 @@ def main(argv):
                 print('Failed to check that the API reference is up to date:', API_REF_URL)
                 return
 
-            from splusthon_generator.parsers import find_layer
+            from wyngthon_generator.parsers import find_layer
             layer = next(filter(None, map(find_layer, TLOBJECT_IN_TLS)))
             published_layer = int(m[1])
             if published_layer != layer:
@@ -177,15 +177,15 @@ def main(argv):
         # (Re)generate the code to make sure we don't push without it
         generate(['tl', 'errors'])
 
-        # Try importing the splusthon module to assert it has no errors
+        # Try importing the wyngthon module to assert it has no errors
         try:
-            import splusthon
+            import wyngthon
         except Exception as e:
             print('Packaging for PyPi aborted, importing the module failed.')
             print(e)
             return
 
-        remove_dirs = ['__pycache__', 'build', 'dist', 'SPlusthon.egg-info']
+        remove_dirs = ['__pycache__', 'build', 'dist', 'Wyngthon.egg-info']
         for root, _dirs, _files in os.walk(LIBRARY_DIR, topdown=False):
             # setuptools is including __pycache__ for some reason (#1605)
             if root.endswith('/__pycache__'):
@@ -196,7 +196,7 @@ def main(argv):
         run('python3 setup.py sdist', shell=True)
         run('python3 setup.py bdist_wheel', shell=True)
         run('twine upload dist/*', shell=True)
-        for x in ('build', 'dist', 'SPlusthon.egg-info'):
+        for x in ('build', 'dist', 'Wyngthon.egg-info'):
             shutil.rmtree(x, ignore_errors=True)
 
     else:
@@ -208,11 +208,11 @@ def main(argv):
         with open('README.md', 'r', encoding='utf-8') as f:
             long_description = f.read()
 
-        with open('splusthon/version.py', 'r', encoding='utf-8') as f:
+        with open('wyngthon/version.py', 'r', encoding='utf-8') as f:
             version = re.search(r"^__version__\s*=\s*'(.*)'.*$",
                                 f.read(), flags=re.MULTILINE).group(1)
         setup(
-            name='SPlusthon',
+            name='Wyngthon',
             version=version,
             description="Soroush Plus library for Python",
             long_description=long_description,
@@ -251,7 +251,7 @@ def main(argv):
             ],
             keywords='telegram api chat client library messaging mtproto',
             packages=find_packages(exclude=[
-                'splusthon_*', 'tests*'
+                'wyngthon_*', 'tests*'
             ]),
             install_requires=['pyaes', 'rsa', 'aiohttp'],
             extras_require={

@@ -5,7 +5,7 @@ hide:
 
 # مفاهیم پایه
 
-در این بخش مفاهیم اساسی SPlusthon را یاد خواهید گرفت. درک این مفاهیم برای استفاده مؤثر از کتابخانه ضروری است.
+در این بخش مفاهیم اساسی Wyngthon را یاد خواهید گرفت. درک این مفاهیم برای استفاده مؤثر از کتابخانه ضروری است.
 
 ---
 
@@ -143,7 +143,7 @@ hide:
 ### مثال استفاده از رویداد
 
 ```python
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 client = SoroushClient('anon', api_id, api_hash)
 
@@ -183,12 +183,12 @@ async def handler(event):
 
 ## API کامل
 
-SPlusthon از API کامل سروش‌پلاس پشتیبانی می‌کند. می‌توانید از متدهای پیشرفته برای کنترل دقیق‌تر استفاده کنید.
+Wyngthon از API کامل سروش‌پلاس پشتیبانی می‌کند. می‌توانید از متدهای پیشرفته برای کنترل دقیق‌تر استفاده کنید.
 
 ### مثال استفاده از API خام
 
 ```python
-from splusthon.tl.functions.messages import SendMessageRequest
+from wyngthon.tl.functions.messages import SendMessageRequest
 
 await client(SendMessageRequest(
     peer='username',
@@ -213,13 +213,13 @@ await client(SendMessageRequest(
 
 ## Mastering asyncio
 
-SPlusthon بر پایه asyncio ساخته شده است. برای استفاده مؤثر، باید مفاهیم پایه asyncio را درک کنید.
+Wyngthon بر پایه asyncio ساخته شده است. برای استفاده مؤثر، باید مفاهیم پایه asyncio را درک کنید.
 
 ### مبانی
 
 ```python
 import asyncio
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     client = SoroushClient('anon', api_id, api_hash)

@@ -5,15 +5,15 @@ hide:
 
 # چت‌ها و کانال‌ها
 
-در این بخش مثال‌هایی برای کار با چت‌ها و کانال‌ها در SPlusthon آورده شده است.
+در این بخش مثال‌هایی برای کار با چت‌ها و کانال‌ها در Wyngthon آورده شده است.
 
 ---
 
 ## عضویت در کانال عمومی
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.channels import JoinChannelRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.channels import JoinChannelRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -34,8 +34,8 @@ asyncio.run(main())
 ## خروج از کانال
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.channels import LeaveChannelRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.channels import LeaveChannelRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -56,8 +56,8 @@ asyncio.run(main())
 ## عضویت با لینک دعوت
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.messages import ImportChatInviteRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.messages import ImportChatInviteRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -77,8 +77,8 @@ asyncio.run(main())
 ## اضافه کردن کاربر به چت
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.messages import AddChatUserRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.messages import AddChatUserRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -104,8 +104,8 @@ asyncio.run(main())
 ## اضافه کردن کاربر به کانال
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.channels import InviteToChannelRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.channels import InviteToChannelRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -130,8 +130,8 @@ asyncio.run(main())
 ## بررسی لینک دعوت
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.messages import CheckChatInviteRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.messages import CheckChatInviteRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -150,8 +150,8 @@ asyncio.run(main())
 ## افزایش تعداد بازدید در کانال
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.messages import GetMessagesViewsRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.messages import GetMessagesViewsRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -183,9 +183,9 @@ asyncio.run(main())
 ## دریافت لیست اعضا
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.channels import GetParticipantsRequest
-from splusthon.tl.types import ChannelParticipantsSearch
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.channels import GetParticipantsRequest
+from wyngthon.tl.types import ChannelParticipantsSearch
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:

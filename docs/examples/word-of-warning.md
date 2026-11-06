@@ -5,7 +5,7 @@ hide:
 
 # هشدار مهم
 
-هنگام استفاده از SPlusthon، مهم است که از قوانین و محدودیت‌های سروش‌پلاس آگاه باشید تا حساب شما مسدود نشود.
+هنگام استفاده از Wyngthon، مهم است که از قوانین و محدودیت‌های سروش‌پلاس آگاه باشید تا حساب شما مسدود نشود.
 
 ---
 
@@ -25,7 +25,7 @@ hide:
 
 ### ۳. عدم نقض قوانین
 
-- **هرگز** از SPlusthon برای اهداف غیرقانونی استفاده نکنید
+- **هرگز** از Wyngthon برای اهداف غیرقانونی استفاده نکنید
 - **هرگز** قوانین سروش‌پلاس را نقض نکنید
 - **هرگز** حساب‌های دیگران را هک نکنید
 
@@ -84,7 +84,7 @@ client = SoroushClient('session', api_id, api_hash)
 await client.start()
 
 # درست - فقط دسترسی‌های لازم را بدهید
-# (این مثال فقط یک مفهوم است، SPlusthon به طور خودکار دسترسی‌ها را مدیریت می‌کند)
+# (این مثال فقط یک مفهوم است، Wyngthon به طور خودکار دسترسی‌ها را مدیریت می‌کند)
 ```
 
 ---
@@ -94,7 +94,7 @@ await client.start()
 ### ۱. استفاده از مدیریت خطا
 
 ```python
-from splusthon.errors import FloodWaitError, PeerFloodError, RPCError
+from wyngthon.errors import FloodWaitError, PeerFloodError, RPCError
 
 async def safe_send(client, entity, message):
     try:
@@ -116,7 +116,7 @@ async def safe_send(client, entity, message):
 
 ```python
 import logging
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 logging.basicConfig(
     format='[%(levelname) %(asctime)s] %(name)s: %(message)s',
@@ -144,8 +144,8 @@ async def rate_limited_send(client, entities, message, delay=1):
 ### ۴. استفاده از String Session برای محیط‌های ابری
 
 ```python
-from splusthon import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon import SoroushClient
+from wyngthon.sessions import StringSession
 
 # برای محیط‌های ابری مانند Heroku
 import os
@@ -187,10 +187,10 @@ client = SoroushClient(StringSession(session_string), api_id, api_hash)
 
 - [قوانین سروش‌پلاس](https://web.splus.ir/terms)
 - [API مستندات سروش‌پلاس](https://core.splus.ir/)
-- [GitHub SPlusthon](https://github.com/shayanheidari01/SPlusthon)
+- [GitHub Wyngthon](https://github.com/shayanheidari01/SPlusthon)
 
 ---
 
 ## نتیجه‌گیری
 
-با رعایت قوانین و نکات امنیتی، می‌توانید از SPlusthon به طور ایمن و مؤثر استفاده کنید. همیشه از بهترین شیوه‌ها پیروی کنید و مراقب حساب خود باشید.
+با رعایت قوانین و نکات امنیتی، می‌توانید از Wyngthon به طور ایمن و مؤثر استفاده کنید. همیشه از بهترین شیوه‌ها پیروی کنید و مراقب حساب خود باشید.

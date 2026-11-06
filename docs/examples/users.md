@@ -5,15 +5,15 @@ hide:
 
 # کاربران
 
-در این بخش مثال‌هایی برای کار با کاربران در SPlusthon آورده شده است.
+در این بخش مثال‌هایی برای کار با کاربران در Wyngthon آورده شده است.
 
 ---
 
 ## دریافت اطلاعات کامل کاربر
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.users import GetFullUserRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.users import GetFullUserRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -38,8 +38,8 @@ asyncio.run(main())
 ## بروزرسانی نام و بیوگرافی
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.account import UpdateProfileRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.account import UpdateProfileRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -61,8 +61,8 @@ asyncio.run(main())
 ## بروزرسانی یوزرنیم
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.account import UpdateUsernameRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.account import UpdateUsernameRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -80,8 +80,8 @@ asyncio.run(main())
 ## بروزرسانی عکس پروفایل
 
 ```python
-from splusthon import SoroushClient
-from splusthon.tl.functions.photos import UploadProfilePhotoRequest
+from wyngthon import SoroushClient
+from wyngthon.tl.functions.photos import UploadProfilePhotoRequest
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -102,7 +102,7 @@ asyncio.run(main())
 ## دانلود عکس پروفایل
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -123,7 +123,7 @@ asyncio.run(main())
 ## دریافت لیست مخاطبین
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -142,7 +142,7 @@ asyncio.run(main())
 ## جستجوی کاربران
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -163,7 +163,7 @@ asyncio.run(main())
 ## بررسی وضعیت کاربر
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:

@@ -9,7 +9,7 @@ body:
       description: Provide a code example that reproduces the problem. Try to keep it short without other dependencies.
       placeholder: |
         ```python
-        from splusthon.sync import SoroushClient
+        from wyngthon.sync import SoroushClient
         ...
 
         ```
@@ -50,10 +50,10 @@ body:
         ```
 
   - type: input
-    id: splusthon-version
+    id: wyngthon-version
     attributes:
-      label: SPlusthon version
-      description: The output of `python -c "import splusthon; print(splusthon.__version__)"`.
+      label: Wyngthon version
+      description: The output of `python -c "import wyngthon; print(wyngthon.__version__)"`.
       placeholder: "1.x"
     validations:
       required: true

@@ -1,6 +1,6 @@
 # راهنمای راه‌اندازی مستندات
 
-این فایل راهنمای کامل راه‌اندازی مستندات SPlusthon با استفاده از MkDocs است.
+این فایل راهنمای کامل راه‌اندازی مستندات Wyngthon با استفاده از MkDocs است.
 
 ## پیش‌نیازها
 
@@ -16,7 +16,7 @@ pip install mkdocs mkdocs-material
 ## ساختار پروژه
 
 ```
-SPlusthon/
+Wyngthon/
 ├── mkdocs.yml                 # تنظیمات MkDocs
 ├── docs/                      # مستندات
 │   ├── index.md              # صفحه اصلی

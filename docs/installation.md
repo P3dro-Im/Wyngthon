@@ -5,13 +5,13 @@ hide:
 
 # نصب و راه‌اندازی
 
-راهنمای نصب SPlusthon و پیکربندی محیط توسعه.
+راهنمای نصب Wyngthon و پیکربندی محیط توسعه.
 
 ---
 
 ## نصب پایتون
 
-SPlusthon یک کتابخانه پایتون است، بنابراین ابتدا باید پایتون را از [python.org](https://www.python.org/downloads/) دانلود و نصب کنید (نسخه 3.7 یا بالاتر توصیه می‌شود).
+Wyngthon یک کتابخانه پایتون است، بنابراین ابتدا باید پایتون را از [python.org](https://www.python.org/downloads/) دانلود و نصب کنید (نسخه 3.7 یا بالاتر توصیه می‌شود).
 
 !!! note "یادداشت"
     پس از نصب پایتون، pip را به آخرین نسخه ارتقا دهید:
@@ -24,10 +24,10 @@ python3 -m pip install --upgrade pip
 
 ## نصب کتابخانه
 
-برای نصب SPlusthon، دستور زیر را اجرا کنید:
+برای نصب Wyngthon، دستور زیر را اجرا کنید:
 
 ```bash
-python3 -m pip install --upgrade splusthon
+python3 -m pip install --upgrade wyngthon
 ```
 
 ---
@@ -50,7 +50,7 @@ python3 -m pip install --upgrade https://github.com/shayanheidari01/SPlusthon/ar
 برای اطمینان از نصب صحیح کتابخانه، دستور زیر را اجرا کنید:
 
 ```bash
-python3 -c "import splusthon; print(splusthon.__version__)"
+python3 -c "import wyngthon; print(wyngthon.__version__)"
 ```
 
 نسخه کتابخانه باید در خروجی نمایش داده شود.
@@ -101,7 +101,7 @@ pip install hachoir
 apt update
 apt install clang lib{jpeg-turbo,webp}-dev python{,-dev} zlib-dev
 pip install -U --user setuptools
-pip install -U --user splusthon cryptg pillow
+pip install -U --user wyngthon cryptg pillow
 ```
 
 ---
@@ -128,8 +128,8 @@ SoroushClient('session_name', api_id, api_hash, proxy=proxy_config)
 
 اگر خطای `ImportError: cannot import name 'SoroushClient'` دریافت کردید:
 
-1. مطمئن شوید نام فایل اسکریپت شما `splusthon.py` نیست
-2. کتابخانه را دوباره نصب کنید: `pip install --upgrade splusthon`
+1. مطمئن شوید نام فایل اسکریپت شما `wyngthon.py` نیست
+2. کتابخانه را دوباره نصب کنید: `pip install --upgrade wyngthon`
 
 ### خطای نصب وابستگی‌ها
 
@@ -137,7 +137,7 @@ SoroushClient('session_name', api_id, api_hash, proxy=proxy_config)
 
 ```bash
 pip install --upgrade setuptools wheel
-pip install --upgrade splusthon
+pip install --upgrade wyngthon
 ```
 
 ---

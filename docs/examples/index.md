@@ -5,7 +5,7 @@ hide:
 
 # مثال‌ها
 
-در این بخش مثال‌های عملی و کاربردی برای یادگیری بهتر SPlusthon آورده شده است.
+در این بخش مثال‌های عملی و کاربردی برای یادگیری بهتر Wyngthon آورده شده است.
 
 ---
 
@@ -17,7 +17,7 @@ hide:
 
     ---
 
-    مثال‌هایی برای کار با کاربران در SPlusthon.
+    مثال‌هایی برای کار با کاربران در Wyngthon.
 
     [:octicons-arrow-right-24: ببینید](users.md)
 
@@ -41,7 +41,7 @@ hide:
 
     ---
 
-    نکات مهم و هشدارها هنگام استفاده از SPlusthon.
+    نکات مهم و هشدارها هنگام استفاده از Wyngthon.
 
     [:octicons-arrow-right-24: ببینید](word-of-warning.md)
 
@@ -54,7 +54,7 @@ hide:
 ### ارسال پیام ساده
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -73,7 +73,7 @@ asyncio.run(main())
 ### دریافت پیام‌ها
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -90,7 +90,7 @@ asyncio.run(main())
 ### ارسال فایل
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -111,7 +111,7 @@ asyncio.run(main())
 ### پاسخ خودکار به پیام‌ها
 
 ```python
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 client = SoroushClient('anon', api_id, api_hash)
 
@@ -130,7 +130,7 @@ client.run_until_disconnected()
 ### پاسخ به پیام خاص
 
 ```python
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 client = SoroushClient('anon', api_id, api_hash)
 
@@ -153,8 +153,8 @@ client.run_until_disconnected()
 ### مدیریت خطا
 
 ```python
-from splusthon import SoroushClient, events
-from splusthon.errors import FloodWaitError, RPCError
+from wyngthon import SoroushClient, events
+from wyngthon.errors import FloodWaitError, RPCError
 
 client = SoroushClient('anon', api_id, api_hash)
 
@@ -182,7 +182,7 @@ client.run_until_disconnected()
 
 ```python
 import asyncio
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def run_client(name, api_id, api_hash):
     client = SoroushClient(name, api_id, api_hash)

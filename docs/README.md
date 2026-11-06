@@ -1,6 +1,6 @@
-# مستندات SPlusthon
+# مستندات Wyngthon
 
-این دایرکتوری شامل مستندات فارسی کتابخانه SPlusthon برای GitHub Pages با استفاده از MkDocs است.
+این دایرکتوری شامل مستندات فارسی کتابخانه Wyngthon برای GitHub Pages با استفاده از MkDocs است.
 
 ## ساختار مستندات
 
@@ -44,7 +44,7 @@ pip install mkdocs mkdocs-material mkdocs-static-i18n
 
 1. به دایرکتوری ریشه پروژه بروید:
    ```bash
-   cd SPlusthon
+   cd Wyngthon
    ```
 
 2. سرور محلی را اجرا کنید:

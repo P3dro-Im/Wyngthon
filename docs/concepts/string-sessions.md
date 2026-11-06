@@ -23,8 +23,8 @@ String Sessions راهی راحت برای تعبیه credentialهای ورود 
 ### روش ساده
 
 ```python
-from splusthon.sync import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon.sync import SoroushClient
+from wyngthon.sessions import StringSession
 
 with SoroushClient(StringSession(), api_id, api_hash) as client:
     print(client.session.save())
@@ -35,8 +35,8 @@ with SoroushClient(StringSession(), api_id, api_hash) as client:
 ### روش با استفاده از SQLite Session
 
 ```python
-from splusthon.sync import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon.sync import SoroushClient
+from wyngthon.sessions import StringSession
 
 # ابتدا با SQLite Session وارد شوید
 client = SoroushClient('sqlite-session', api_id, api_hash)
@@ -49,8 +49,8 @@ print(string)
 ### روش با SoroushClient معمولی
 
 ```python
-from splusthon import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon import SoroushClient
+from wyngthon.sessions import StringSession
 
 client = SoroushClient(StringSession())
 await client.start()
@@ -93,8 +93,8 @@ with SoroushClient(StringSession(string), api_id, api_hash) as client:
 
 ```python
 import os
-from splusthon import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon import SoroushClient
+from wyngthon.sessions import StringSession
 
 string = os.environ.get('SESSION_STRING')
 with SoroushClient(StringSession(string), api_id, api_hash) as client:
@@ -109,8 +109,8 @@ with SoroushClient(StringSession(string), api_id, api_hash) as client:
 ### ایجاد و ذخیره String Session
 
 ```python
-from splusthon import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon import SoroushClient
+from wyngthon.sessions import StringSession
 
 async def create_session():
     client = SoroushClient(StringSession())
@@ -135,8 +135,8 @@ asyncio.run(create_session())
 ### استفاده از String Session ذخیره شده
 
 ```python
-from splusthon import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon import SoroushClient
+from wyngthon.sessions import StringSession
 
 async def use_session():
     # بارگذاری String Session از فایل

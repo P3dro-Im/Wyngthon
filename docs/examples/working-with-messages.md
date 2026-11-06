@@ -5,7 +5,7 @@ hide:
 
 # کار با پیام‌ها
 
-در این بخش مثال‌هایی برای کار با پیام‌ها در SPlusthon آورده شده است.
+در این بخش مثال‌هایی برای کار با پیام‌ها در Wyngthon آورده شده است.
 
 ---
 
@@ -14,7 +14,7 @@ hide:
 ### ارسال به خودتان
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -31,12 +31,12 @@ asyncio.run(main())
 ### ارسال به یوزرنیم
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
         # ارسال به یوزرنیم
-        await client.send_message('username', 'سلام از SPlusthon!')
+        await client.send_message('username', 'سلام از Wyngthon!')
 
 import asyncio
 asyncio.run(main())
@@ -45,7 +45,7 @@ asyncio.run(main())
 ### ارسال به شماره تلفن
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -59,7 +59,7 @@ asyncio.run(main())
 ### ارسال به شناسه چت
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -77,7 +77,7 @@ asyncio.run(main())
 ### ارسال عکس
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -94,7 +94,7 @@ asyncio.run(main())
 ### ارسال فایل
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -111,7 +111,7 @@ asyncio.run(main())
 ### ارسال ویدیو
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -132,7 +132,7 @@ asyncio.run(main())
 ### دریافت آخرین پیام‌ها
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -149,7 +149,7 @@ asyncio.run(main())
 ### دریافت پیام‌های خاص
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -169,7 +169,7 @@ asyncio.run(main())
 ### جستجوی پیام‌ها
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -190,7 +190,7 @@ asyncio.run(main())
 ### ویرایش پیام
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -207,7 +207,7 @@ asyncio.run(main())
 ### حذف پیام
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -231,7 +231,7 @@ asyncio.run(main())
 ### پاسخ مستقیم
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -248,7 +248,7 @@ asyncio.run(main())
 ### پاسخ با استفاده از event
 
 ```python
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 client = SoroushClient('anon', api_id, api_hash)
 
@@ -271,7 +271,7 @@ client.run_until_disconnected()
 ### دانلود عکس
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:
@@ -291,7 +291,7 @@ asyncio.run(main())
 ### دانلود فایل
 
 ```python
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def main():
     with SoroushClient('anon', api_id, api_hash) as client:

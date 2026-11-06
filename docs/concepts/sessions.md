@@ -48,10 +48,10 @@ Session‌ها بخش مهمی از کتابخانه هستند که اطلاع�
 
 ### پیاده‌سازی‌های موجود
 
-SPlusthon سه پیاده‌سازی از کلاس انتزاعی `Session` دارد:
+Wyngthon سه پیاده‌سازی از کلاس انتزاعی `Session` دارد:
 
 ```python
-from splusthon.sessions import MemorySession, SQLiteSession, StringSession
+from wyngthon.sessions import MemorySession, SQLiteSession, StringSession
 ```
 
 1. **MemorySession**: اطلاعات session را در حافظه ذخیره می‌کند.
@@ -61,8 +61,8 @@ from splusthon.sessions import MemorySession, SQLiteSession, StringSession
 ### استفاده از StringSession
 
 ```python
-from splusthon.sync import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon.sync import SoroushClient
+from wyngthon.sessions import StringSession
 
 with SoroushClient(StringSession(string), api_id, api_hash) as client:
     ...  # استفاده از کلاینت
@@ -81,7 +81,7 @@ string = StringSession.save(client.session)
 
 ساده‌ترین راه برای ایجاد پیاده‌سازی storage سفارشی خود، استفاده از `MemorySession` به عنوان پایه و بررسی نحوه کار `SQLiteSession` یا یکی از پیاده‌سازی‌های انجمن است.
 
-فایل‌های پایتون مربوطه را می‌توانید در دایرکتوری `sessions/` در مخزن SPlusthon پیدا کنید.
+فایل‌های پایتون مربوطه را می‌توانید در دایرکتوری `sessions/` در مخزن Wyngthon پیدا کنید.
 
 پس از ایجاد پیاده‌سازی خود، می‌توانید آن را به لیست پیاده‌سازی‌های session نگهداری شده توسط انجمن اضافه کنید.
 
@@ -96,8 +96,8 @@ string = StringSession.save(client.session)
 ساده‌ترین راه برای تولید StringSession به شرح زیر است:
 
 ```python
-from splusthon.sync import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon.sync import SoroushClient
+from wyngthon.sessions import StringSession
 
 with SoroushClient(StringSession(), api_id, api_hash) as client:
     print(client.session.save())

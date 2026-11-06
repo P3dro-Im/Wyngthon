@@ -5,7 +5,7 @@ hide:
 
 # مرجع API
 
-در این بخش مستندات کامل API کتابخانه SPlusthon آورده شده است.
+در این بخش مستندات کامل API کتابخانه Wyngthon آورده شده است.
 
 ---
 
@@ -331,7 +331,7 @@ async def handler(event):
 خطای انتظار اجباری.
 
 ```python
-from splusthon.errors import FloodWaitError
+from wyngthon.errors import FloodWaitError
 
 try:
     await client.send_message('username', 'سلام!')
@@ -346,7 +346,7 @@ except FloodWaitError as e:
 خطای محدودیت ارسال پیام.
 
 ```python
-from splusthon.errors import PeerFloodError
+from wyngthon.errors import PeerFloodError
 
 try:
     await client.send_message('username', 'سلام!')
@@ -361,7 +361,7 @@ except PeerFloodError:
 ### StringSession
 
 ```python
-from splusthon.sessions import StringSession
+from wyngthon.sessions import StringSession
 
 # ایجاد StringSession
 session = StringSession()
@@ -378,4 +378,4 @@ string = client.session.save()
 ## منابع
 
 - [مرجع کامل API](https://tl.splusthon.dev/)
-- [GitHub SPlusthon](https://github.com/shayanheidari01/SPlusthon)
+- [GitHub Wyngthon](https://github.com/shayanheidari01/SPlusthon)

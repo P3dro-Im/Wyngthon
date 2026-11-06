@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="logo.svg" width="180" alt="SPlusthon Logo">
+<img src="logo.svg" width="180" alt="Wyngthon Logo">
 
-<h1>SPlusthon</h1>
+<h1>Wyngthon</h1>
 
 <p>
   <strong>Asynchronous Python library for the Soroush Plus API</strong>
@@ -57,7 +57,7 @@
 
 ---
 
-کتابخانه SPlusthon یک کتابخانه مدرن و قدرتمند برای **Python 3** است که بر پایه
+کتابخانه Wyngthon یک کتابخانه مدرن و قدرتمند برای **Python 3** است که بر پایه
 **asyncio** توسعه یافته و امکان تعامل مستقیم با **API پیام‌رسان سروش پلاس**
 را به‌عنوان **کاربر** یا **ربات** فراهم می‌کند.
 
@@ -87,7 +87,7 @@
 از PyPI:
 
 ```bash
-pip install splusthon
+pip install wyngthon
 ```
 
 یا آخرین نسخه توسعه:
@@ -99,8 +99,8 @@ pip install git+https://github.com/shayanheidari01/SPlusthon.git
 ## شروع سریع
 
 ```python
-from splusthon import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon import SoroushClient
+from wyngthon.sessions import StringSession
 
 client = SoroushClient(StringSession())
 
@@ -110,8 +110,8 @@ client.start()
 ## نمونه
 
 ```python
-from splusthon import SoroushClient, events
-from splusthon.sessions import StringSession
+from wyngthon import SoroushClient, events
+from wyngthon.sessions import StringSession
 
 client = SoroushClient(StringSession())
 
@@ -128,7 +128,7 @@ client.run_until_disconnected()
 ```python
 client.send_message(
     "username",
-    "سلام از SPlusthon ❤️"
+    "سلام از Wyngthon ❤️"
 )
 ```
 
@@ -151,8 +151,8 @@ message.download_media()
 ## Session ذخیره‌شده
 
 ```python
-from splusthon import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon import SoroushClient
+from wyngthon.sessions import StringSession
 
 session = "1AwA..."
 

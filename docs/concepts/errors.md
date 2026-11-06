@@ -5,7 +5,7 @@ hide:
 
 # مدیریت خطاها
 
-SPlusthon دارای سیستم مدیریت خطای قدرتمندی است که به شما امکان می‌دهد خطاهای مختلف API سروش‌پلاس را مدیریت کنید.
+Wyngthon دارای سیستم مدیریت خطای قدرتمندی است که به شما امکان می‌دهد خطاهای مختلف API سروش‌پلاس را مدیریت کنید.
 
 ---
 
@@ -16,7 +16,7 @@ SPlusthon دارای سیستم مدیریت خطای قدرتمندی است ک
 خطاهای اصلی API سروش‌پلاس هستند. این خطاها زمانی رخ می‌دهند که درخواست شما با مشکلی مواجه شود.
 
 ```python
-from splusthon.errors import RPCError, FloodWaitError, PeerFloodError
+from wyngthon.errors import RPCError, FloodWaitError, PeerFloodError
 
 try:
     await client.send_message('username', 'سلام!')
@@ -40,7 +40,7 @@ except RPCError as e:
 وقتی خیلی سریع درخواست ارسال می‌کنید و باید صبر کنید:
 
 ```python
-from splusthon.errors import FloodWaitError
+from wyngthon.errors import FloodWaitError
 
 try:
     await client.send_message('username', 'سلام!')
@@ -57,7 +57,7 @@ except FloodWaitError as e:
 وقتی به محدودیت ارسال پیام رسیده‌اید:
 
 ```python
-from splusthon.errors import PeerFloodError
+from wyngthon.errors import PeerFloodError
 
 try:
     await client.send_message('username', 'سلام!')
@@ -70,7 +70,7 @@ except PeerFloodError:
 وقتی حساب شما در کانالی مسدود شده است:
 
 ```python
-from splusthon.errors import UserBannedInChannelError
+from wyngthon.errors import UserBannedInChannelError
 
 try:
     await client.send_message('channel', 'سلام!')
@@ -83,7 +83,7 @@ except UserBannedInChannelError:
 وقتی اجازه نوشتن در چت را ندارید:
 
 ```python
-from splusthon.errors import ChatWriteForbiddenError
+from wyngthon.errors import ChatWriteForbiddenError
 
 try:
     await client.send_message('chat', 'سلام!')
@@ -96,7 +96,7 @@ except ChatWriteForbiddenError:
 وقتی یوزرنیم وجود ندارد:
 
 ```python
-from splusthon.errors import UsernameNotOccupiedError
+from wyngthon.errors import UsernameNotOccupiedError
 
 try:
     await client.send_message('nonexistent_username', 'سلام!')
@@ -109,7 +109,7 @@ except UsernameNotOccupiedError:
 وقتی یوزرنیم نامعتبر است:
 
 ```python
-from splusthon.errors import UsernameInvalidError
+from wyngthon.errors import UsernameInvalidError
 
 try:
     await client.send_message('invalid username!', 'سلام!')
@@ -124,7 +124,7 @@ except UsernameInvalidError:
 ### استفاده از try/except عمومی
 
 ```python
-from splusthon.errors import RPCError
+from wyngthon.errors import RPCError
 
 async def safe_send_message(client, entity, message):
     try:
@@ -142,7 +142,7 @@ async def safe_send_message(client, entity, message):
 
 ```python
 from functools import wraps
-from splusthon.errors import RPCError
+from wyngthon.errors import RPCError
 
 def handle_errors(func):
     @wraps(func)
@@ -169,7 +169,7 @@ async def send_message(client, entity, message):
 ### استفاده از on_error
 
 ```python
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 client = SoroushClient('anon', api_id, api_hash)
 
@@ -195,7 +195,7 @@ async def error_handler(event):
 
 ```python
 import logging
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 # تنظیم logging
 logging.basicConfig(
@@ -221,8 +221,8 @@ async def handler(event):
 ### ارسال پیام با مدیریت خطا
 
 ```python
-from splusthon import SoroushClient, events
-from splusthon.errors import FloodWaitError, PeerFloodError, RPCError
+from wyngthon import SoroushClient, events
+from wyngthon.errors import FloodWaitError, PeerFloodError, RPCError
 
 client = SoroushClient('anon', api_id, api_hash)
 

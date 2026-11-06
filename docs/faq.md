@@ -5,16 +5,16 @@ hide:
 
 # سوالات متداول
 
-پاسخ به سوالات رایج کاربران SPlusthon.
+پاسخ به سوالات رایج کاربران Wyngthon.
 
 ---
 
 ## سوالات نصب و راه‌اندازی
 
-### چگونه SPlusthon را نصب کنم؟
+### چگونه Wyngthon را نصب کنم؟
 
 ```bash
-pip install splusthon
+pip install wyngthon
 ```
 
 ### چگونه نسخه توسعه‌دهنده را نصب کنم؟
@@ -26,7 +26,7 @@ pip install --upgrade https://github.com/shayanheidari01/SPlusthon/archive/v1.zi
 ### چگونه نصب را تأیید کنم؟
 
 ```bash
-python3 -c "import splusthon; print(splusthon.__version__)"
+python3 -c "import wyngthon; print(wyngthon.__version__)"
 ```
 
 ### وابستگی‌های اختیاری چیست؟
@@ -48,13 +48,13 @@ python3 -c "import splusthon; print(splusthon.__version__)"
 4. اطلاعات برنامه خود را پر کنید
 5. روی "Create application" کلیک کنید
 
-### آیا می‌توانم بدون API ID از SPlusthon استفاده کنم؟
+### آیا می‌توانم بدون API ID از Wyngthon استفاده کنم؟
 
-بله، SPlusthon API credentials پیش‌فرض دارد:
+بله، Wyngthon API credentials پیش‌فرض دارد:
 
 ```python
-from splusthon import SoroushClient
-from splusthon.sessions import StringSession
+from wyngthon import SoroushClient
+from wyngthon.sessions import StringSession
 
 client = SoroushClient(StringSession())
 client.start()
@@ -63,7 +63,7 @@ client.start()
 ### چگونه با ربات وارد شوم؟
 
 ```python
-from splusthon.sync import SoroushClient
+from wyngthon.sync import SoroushClient
 
 api_id = 12345
 api_hash = '0123456789abcdef0123456789abcdef'
@@ -113,7 +113,7 @@ await message.reply('این یک پاسخ است!')
 ### چگونه به پیام‌های جدید پاسخ دهم؟
 
 ```python
-from splusthon import SoroushClient, events
+from wyngthon import SoroushClient, events
 
 client = SoroushClient('anon', api_id, api_hash)
 
@@ -151,7 +151,7 @@ Session فایلی است که اطلاعات احراز هویت و کش entity
 StringSession نوعی Session است که اطلاعات را به صورت رشته ذخیره می‌کند:
 
 ```python
-from splusthon.sessions import StringSession
+from wyngthon.sessions import StringSession
 
 session = StringSession()
 string = session.save()
@@ -176,7 +176,7 @@ string = client.session.save()
 خطایی است که وقتی خیلی سریع درخواست ارسال می‌کنید رخ می‌دهد. باید صبر کنید:
 
 ```python
-from splusthon.errors import FloodWaitError
+from wyngthon.errors import FloodWaitError
 
 try:
     await client.send_message('username', 'سلام!')
@@ -189,7 +189,7 @@ except FloodWaitError as e:
 خطایی است که وقتی به محدودیت ارسال پیام رسیدید رخ می‌دهد:
 
 ```python
-from splusthon.errors import PeerFloodError
+from wyngthon.errors import PeerFloodError
 
 try:
     await client.send_message('username', 'سلام!')
@@ -200,7 +200,7 @@ except PeerFloodError:
 ### چگونه خطاها را مدیریت کنم？
 
 ```python
-from splusthon.errors import RPCError, FloodWaitError, PeerFloodError
+from wyngthon.errors import RPCError, FloodWaitError, PeerFloodError
 
 async def safe_send(client, entity, message):
     try:
@@ -240,7 +240,7 @@ client = SoroushClient('anon', api_id, api_hash, proxy=proxy)
 ### چگونه از MTProto Proxy استفاده کنم؟
 
 ```python
-from splusthon import SoroushClient, connection
+from wyngthon import SoroushClient, connection
 
 client = SoroushClient(
     'anon', api_id, api_hash,
@@ -253,7 +253,7 @@ client = SoroushClient(
 
 ```python
 import asyncio
-from splusthon import SoroushClient
+from wyngthon import SoroushClient
 
 async def run_client(name, api_id, api_hash):
     client = SoroushClient(name, api_id, api_hash)
@@ -280,9 +280,9 @@ asyncio.run(main())
 3. فایل‌های session را آنلاین به اشتراک نگذارید
 4. از رمزگذاری استفاده کنید
 
-### آیا SPlusthon امن است؟
+### آیا Wyngthon امن است؟
 
-SPlusthon یک کتابخانه شخص ثالث است. مراقب باشید:
+Wyngthon یک کتابخانه شخص ثالث است. مراقب باشید:
 
 - از منابع معتبر دانلود کنید
 - credentialهای خود را با کسی به اشتراک نگذارید
@@ -305,24 +305,24 @@ SPlusthon یک کتابخانه شخص ثالث است. مراقب باشید:
 ### چگونه مستندات را مطالعه کنم؟
 
 - [مرجع کامل API](https://tl.splusthon.dev/)
-- [GitHub SPlusthon](https://github.com/shayanheidari01/SPlusthon)
+- [GitHub Wyngthon](https://github.com/shayanheidari01/SPlusthon)
 
 ---
 
 ## سوالات دیگر
 
-### SPlusthon چیست؟
+### Wyngthon چیست؟
 
-SPlusthon یک کتابخانه پایتون asyncio است که برای تعامل با API سروش‌پلاس طراحی شده است.
+Wyngthon یک کتابخانه پایتون asyncio است که برای تعامل با API سروش‌پلاس طراحی شده است.
 
-### SPlusthon از چه نسخه پایتونی پشتیبانی می‌کند؟
+### Wyngthon از چه نسخه پایتونی پشتیبانی می‌کند؟
 
 پایتون 3.7 یا بالاتر.
 
-### آیا SPlusthon رایگان است؟
+### آیا Wyngthon رایگان است؟
 
-بله، SPlusthon کاملاً رایگان و متن‌باز است.
+بله، Wyngthon کاملاً رایگان و متن‌باز است.
 
-### چگونه از SPlusthon استفاده کنم؟
+### چگونه از Wyngthon استفاده کنم؟
 
 مستندات را مطالعه کنید و مثال‌ها را دنبال کنید.
