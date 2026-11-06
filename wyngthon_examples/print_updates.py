@@ -6,7 +6,7 @@ import sys
 import time
 
 # Import the client
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 
 
 # This is a helper method to access environment variables or
@@ -36,7 +36,7 @@ async def handler(update):
 
 
 # Use the client in a `with` block. It calls `start/disconnect` automatically.
-with TelegramClient(session, api_id, api_hash, proxy=proxy) as client:
+with WyngClient(session, api_id, api_hash, proxy=proxy) as client:
     # Register the update handler so that it gets called
     client.add_event_handler(handler)
 

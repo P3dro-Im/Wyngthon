@@ -23,10 +23,10 @@ String Sessions راهی راحت برای تعبیه credentialهای ورود 
 ### روش ساده
 
 ```python
-from wyngthon.sync import TelegramClient
+from wyngthon.sync import WyngClient
 from wyngthon.sessions import StringSession
 
-with TelegramClient(StringSession(), api_id, api_hash) as client:
+with WyngClient(StringSession(), api_id, api_hash) as client:
     print(client.session.save())
 ```
 
@@ -35,24 +35,24 @@ with TelegramClient(StringSession(), api_id, api_hash) as client:
 ### روش با استفاده از SQLite Session
 
 ```python
-from wyngthon.sync import TelegramClient
+from wyngthon.sync import WyngClient
 from wyngthon.sessions import StringSession
 
 # ابتدا با SQLite Session وارد شوید
-client = TelegramClient('sqlite-session', api_id, api_hash)
+client = WyngClient('sqlite-session', api_id, api_hash)
 
 # سپس آن را به String Session تبدیل کنید
 string = StringSession.save(client.session)
 print(string)
 ```
 
-### روش با TelegramClient معمولی
+### روش با WyngClient معمولی
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 from wyngthon.sessions import StringSession
 
-client = TelegramClient(StringSession())
+client = WyngClient(StringSession())
 await client.start()
 
 # دریافت String Session
@@ -69,7 +69,7 @@ print(string_session)
 ```python
 string = '1aaNk8EX-YRfwoRsebUkugFvht6DUPi_Q25UOCzOAqzc...'
 
-with TelegramClient(StringSession(string), api_id, api_hash) as client:
+with WyngClient(StringSession(string), api_id, api_hash) as client:
     client.loop.run_until_complete(client.send_message('me', 'سلام'))
 ```
 
@@ -84,7 +84,7 @@ with open('session.txt', 'w') as f:
 with open('session.txt', 'r') as f:
     string = f.read()
 
-with TelegramClient(StringSession(string), api_id, api_hash) as client:
+with WyngClient(StringSession(string), api_id, api_hash) as client:
     # استفاده از کلاینت
     pass
 ```
@@ -93,11 +93,11 @@ with TelegramClient(StringSession(string), api_id, api_hash) as client:
 
 ```python
 import os
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 from wyngthon.sessions import StringSession
 
 string = os.environ.get('SESSION_STRING')
-with TelegramClient(StringSession(string), api_id, api_hash) as client:
+with WyngClient(StringSession(string), api_id, api_hash) as client:
     # استفاده از کلاینت
     pass
 ```
@@ -109,11 +109,11 @@ with TelegramClient(StringSession(string), api_id, api_hash) as client:
 ### ایجاد و ذخیره String Session
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 from wyngthon.sessions import StringSession
 
 async def create_session():
-    client = TelegramClient(StringSession())
+    client = WyngClient(StringSession())
     await client.start()
     
     # ذخیره String Session
@@ -135,7 +135,7 @@ asyncio.run(create_session())
 ### استفاده از String Session ذخیره شده
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 from wyngthon.sessions import StringSession
 
 async def use_session():
@@ -144,7 +144,7 @@ async def use_session():
         string = f.read()
     
     # ایجاد کلاینت
-    with TelegramClient(StringSession(string), api_id, api_hash) as client:
+    with WyngClient(StringSession(string), api_id, api_hash) as client:
         # دریافت اطلاعات کاربر
         me = await client.get_me()
         print(f'وارد شدید به عنوان: {me.first_name}')

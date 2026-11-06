@@ -7,7 +7,7 @@ from .. import helpers, utils
 from ..tl import functions, TLRequest
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 
 # TODO Make use of :tl:`InvokeWithMessagesRange` somehow
@@ -109,7 +109,7 @@ class _TakeoutClient:
 
 class AccountMethods:
     def takeout(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             finalize: bool = True,
             *,
             contacts: bool = None,
@@ -118,7 +118,7 @@ class AccountMethods:
             megagroups: bool = None,
             channels: bool = None,
             files: bool = None,
-            max_file_size: bool = None) -> 'TelegramClient':
+            max_file_size: bool = None) -> 'WyngClient':
         """
         Returns a :ref:`telethon-client` which calls methods behind a takeout session.
 
@@ -219,7 +219,7 @@ class AccountMethods:
 
         return _TakeoutClient(finalize, self, request)
 
-    async def end_takeout(self: 'TelegramClient', success: bool) -> bool:
+    async def end_takeout(self: 'WyngClient', success: bool) -> bool:
         """
         Finishes the current takeout session.
 

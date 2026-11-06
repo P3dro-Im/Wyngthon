@@ -16,11 +16,11 @@ hide:
 Wyngthon دارای API credentials پیش‌فرض برای سروش‌پلاس است، بنابراین می‌توانید بدون دریافت کلیدهای خود، کلاینت ایجاد کنید:
 
 ```python
-from wyngthon import TelegramClient, events, sync
+from wyngthon import WyngClient, events, sync
 from wyngthon.sessions import StringSession
 
 # بدون نیاز به api_id یا api_hash
-client = TelegramClient(StringSession())
+client = WyngClient(StringSession())
 client.start()
 ```
 
@@ -29,13 +29,13 @@ client.start()
 برای استفاده استاندارد، ابتدا باید API ID و Hash خود را از [my.telegram.org](https://my.telegram.org/) دریافت کنید:
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 
 api_id = 12345
 api_hash = '0123456789abcdef0123456789abcdef'
 
 # اولین پارامتر نام فایل session است
-with TelegramClient('anon', api_id, api_hash) as client:
+with WyngClient('anon', api_id, api_hash) as client:
     client.loop.run_until_complete(client.send_message('me', 'سلام، خودم!'))
 ```
 
@@ -148,11 +148,11 @@ async for message in client.iter_messages('me'):
 در اینجا یک مثال کامل برای شروع سریع آورده شده است:
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 
 api_id = 12345
 api_hash = '0123456789abcdef0123456789abcdef'
-client = TelegramClient('anon', api_id, api_hash)
+client = WyngClient('anon', api_id, api_hash)
 
 async def main():
     # دریافت اطلاعات خودتان

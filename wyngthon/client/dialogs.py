@@ -10,7 +10,7 @@ from ..tl import types, functions, custom
 _MAX_CHUNK_SIZE = 100
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 
 def _dialog_message_key(peer, message_id):
@@ -145,7 +145,7 @@ class DialogMethods:
     # region Public methods
 
     def iter_dialogs(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             limit: float = None,
             *,
             offset_date: 'hints.DateLike' = None,
@@ -233,7 +233,7 @@ class DialogMethods:
             folder=folder
         )
 
-    async def get_dialogs(self: 'TelegramClient', *args, **kwargs) -> 'hints.TotalList':
+    async def get_dialogs(self: 'WyngClient', *args, **kwargs) -> 'hints.TotalList':
         """
         Same as `iter_dialogs()`, but returns a
         `TotalList <wyngthon.helpers.TotalList>` instead.
@@ -262,7 +262,7 @@ class DialogMethods:
     get_dialogs.__signature__ = inspect.signature(iter_dialogs)
 
     def iter_drafts(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntitiesLike' = None
     ) -> _DraftsIter:
         """
@@ -296,7 +296,7 @@ class DialogMethods:
         return _DraftsIter(self, None, entities=entity)
 
     async def get_drafts(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntitiesLike' = None
     ) -> 'hints.TotalList':
         """
@@ -320,7 +320,7 @@ class DialogMethods:
             return items[0]
 
     async def edit_folder(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntitiesLike' = None,
             folder: typing.Union[int, typing.Sequence[int]] = None,
             *,
@@ -403,7 +403,7 @@ class DialogMethods:
         ]))
 
     async def delete_dialog(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             *,
             revoke: bool = False
@@ -474,7 +474,7 @@ class DialogMethods:
         return result
 
     def conversation(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             *,
             timeout: float = 60,

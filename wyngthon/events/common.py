@@ -161,7 +161,7 @@ class EventCommon(ChatGetter, abc.ABC):
     @property
     def client(self):
         """
-        The `wyngthon.TelegramClient` that created this event.
+        The `wyngthon.WyngClient` that created this event.
         """
         return self._client
 

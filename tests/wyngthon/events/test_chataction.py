@@ -1,10 +1,10 @@
 import pytest
 
-from wyngthon import TelegramClient, events, types, utils
+from wyngthon import WyngClient, events, types, utils
 
 
 def get_client():
-    return TelegramClient(None, 1, '1')
+    return WyngClient(None, 1, '1')
 
 
 def get_user_456():

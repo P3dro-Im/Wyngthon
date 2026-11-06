@@ -294,9 +294,9 @@ class Conversation(ChatGetter):
 
         .. code-block:: python
 
-            from wyngthon import TelegramClient, events
+            from wyngthon import WyngClient, events
 
-            client = TelegramClient(...)
+            client = WyngClient(...)
             group_id = ...
 
             async def main():

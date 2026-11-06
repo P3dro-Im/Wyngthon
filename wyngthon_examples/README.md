@@ -86,7 +86,7 @@ The content of the plugins or how they work is not really relevant. You can
 disable them by moving them elsewhere or deleting the file entirely. The point
 is to learn how you can build fancy things with your own code and Wyngthon.
 
-### [`interactive_telegram_client.py`]
+### [`interactive_wyng_client.py`]
 
 * Usable as: **user**.
 * Difficulty: **medium**.
@@ -155,7 +155,7 @@ It makes use of the ["raw API"](https://tl.splusthon.dev) (that is, no friendly 
 [`assistant.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/assistant.py
 [`quart_login.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/quart_login.py
 [`gui.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/gui.py
-[`interactive_telegram_client.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/interactive_telegram_client.py
+[`interactive_wyng_client.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/interactive_wyng_client.py
 [`print_messages.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/print_messages.py
 [`print_updates.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/print_updates.py
 [`replier.py`]: https://raw.githubusercontent.com/shayanheidari01/SPlusthon/v1/splusthon_examples/replier.py

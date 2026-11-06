@@ -37,7 +37,7 @@ class MessageButton:
     @property
     def client(self):
         """
-        Returns the `wyngthon.client.telegramclient.TelegramClient`
+        Returns the `wyngthon.client.wyngclient.WyngClient`
         instance that created this instance.
         """
         return self._client

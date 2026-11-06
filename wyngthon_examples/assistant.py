@@ -16,7 +16,7 @@ import os
 import sys
 import time
 
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 
 try:
     # Standalone script assistant.py with folder plugins/
@@ -55,7 +55,7 @@ NAME = TOKEN.split(':')[0]
 
 
 async def main():
-    bot = TelegramClient(NAME, API_ID, API_HASH)
+    bot = WyngClient(NAME, API_ID, API_HASH)
 
     await bot.start(bot_token=TOKEN)
 

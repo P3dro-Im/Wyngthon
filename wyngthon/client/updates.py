@@ -29,7 +29,7 @@ from ..version import __version__
 
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 
 Callback = typing.Callable[[typing.Any], typing.Any]
@@ -38,7 +38,7 @@ class UpdateMethods:
 
     # region Public methods
 
-    async def _run_until_disconnected(self: 'TelegramClient'):
+    async def _run_until_disconnected(self: 'WyngClient'):
         try:
             # Make a high-level request to notify that we want updates
             await self(functions.updates.GetStateRequest())
@@ -51,7 +51,7 @@ class UpdateMethods:
         finally:
             await self.disconnect()
 
-    async def set_receive_updates(self: 'TelegramClient', receive_updates):
+    async def set_receive_updates(self: 'WyngClient', receive_updates):
         """
         Change the value of `receive_updates`.
 
@@ -62,7 +62,7 @@ class UpdateMethods:
         if receive_updates:
             await self(functions.updates.GetStateRequest())
 
-    def run_until_disconnected(self: 'TelegramClient'):
+    def run_until_disconnected(self: 'WyngClient'):
         """
         Runs the event loop until the library is disconnected.
 
@@ -72,7 +72,7 @@ class UpdateMethods:
         the client will disconnect and said error will be raised.
 
         Manual disconnections can be made by calling `disconnect()
-        <wyngthon.client.telegrambaseclient.TelegramBaseClient.disconnect>`
+        <wyngthon.client.wyngbaseclient.WyngBaseClient.disconnect>`
         or sending a ``KeyboardInterrupt`` (e.g. by pressing ``Ctrl+C`` on
         the console window running the script).
 
@@ -109,7 +109,7 @@ class UpdateMethods:
             # No loop.run_until_complete; it's already syncified
             self.disconnect()
 
-    def on(self: 'TelegramClient', event: EventBuilder):
+    def on(self: 'WyngClient', event: EventBuilder):
         """
         Decorator used to `add_event_handler` more conveniently.
 
@@ -122,8 +122,8 @@ class UpdateMethods:
         Example
             .. code-block:: python
 
-                from wyngthon import TelegramClient, events
-                client = TelegramClient(...)
+                from wyngthon import WyngClient, events
+                client = WyngClient(...)
 
                 # Here we use client.on
                 @client.on(events.NewMessage)
@@ -137,7 +137,7 @@ class UpdateMethods:
         return decorator
 
     def add_event_handler(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             callback: Callback,
             event: EventBuilder = None):
         """
@@ -164,8 +164,8 @@ class UpdateMethods:
         Example
             .. code-block:: python
 
-                from wyngthon import TelegramClient, events
-                client = TelegramClient(...)
+                from wyngthon import WyngClient, events
+                client = WyngClient(...)
 
                 async def handler(event):
                     ...
@@ -186,7 +186,7 @@ class UpdateMethods:
         self._event_builders.append((event, callback))
 
     def remove_event_handler(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             callback: Callback,
             event: EventBuilder = None) -> int:
         """
@@ -224,7 +224,7 @@ class UpdateMethods:
 
         return found
 
-    def list_event_handlers(self: 'TelegramClient')\
+    def list_event_handlers(self: 'WyngClient')\
             -> 'typing.Sequence[typing.Tuple[Callback, EventBuilder]]':
         """
         Lists all registered event handlers.
@@ -245,7 +245,7 @@ class UpdateMethods:
         """
         return [(callback, event) for event, callback in self._event_builders]
 
-    async def catch_up(self: 'TelegramClient'):
+    async def catch_up(self: 'WyngClient'):
         """
         "Catches up" on the missed updates while the client was offline.
         You should call this method after registering the event handlers
@@ -264,7 +264,7 @@ class UpdateMethods:
 
     # region Private methods
 
-    async def _update_loop(self: 'TelegramClient'):
+    async def _update_loop(self: 'WyngClient'):
         # If the MessageBox is not empty, the account had to be logged-in to fill in its state.
         # This flag is used to propagate the "you got logged-out" error up (but getting logged-out
         # can only happen if it was once logged-in).
@@ -513,7 +513,7 @@ class UpdateMethods:
             u._entities = entities
         return updates
 
-    async def _keepalive_loop(self: 'TelegramClient'):
+    async def _keepalive_loop(self: 'WyngClient'):
         # Pings' ID don't really need to be secure, just "random"
         rnd = lambda: random.randrange(-2**63, 2**63)
         while self.is_connected():
@@ -553,7 +553,7 @@ class UpdateMethods:
 
             await utils.maybe_async(self.session.save())
 
-    async def _dispatch_update(self: 'TelegramClient', update):
+    async def _dispatch_update(self: 'WyngClient', update):
         # TODO only used for AlbumHack, and MessageBox is not really designed for this
         others = None
 
@@ -620,7 +620,7 @@ class UpdateMethods:
                     name = getattr(callback, '__name__', repr(callback))
                     self._log[__name__].exception('Unhandled exception on %s', name)
 
-    async def _dispatch_event(self: 'TelegramClient', event):
+    async def _dispatch_event(self: 'WyngClient', event):
         """
         Dispatches a single, out-of-order event. Used by `AlbumHack`.
         """
@@ -661,7 +661,7 @@ class UpdateMethods:
                     name = getattr(callback, '__name__', repr(callback))
                     self._log[__name__].exception('Unhandled exception on %s', name)
 
-    async def _handle_auto_reconnect(self: 'TelegramClient'):
+    async def _handle_auto_reconnect(self: 'WyngClient'):
         # TODO Catch-up
         # For now we make a high-level request to let Telegram
         # know we are still interested in receiving more updates.
@@ -711,7 +711,7 @@ class EventBuilderDict:
     """
     Helper "dictionary" to return events from types and cache them.
     """
-    def __init__(self, client: 'TelegramClient', update, others):
+    def __init__(self, client: 'WyngClient', update, others):
         self.client = client
         self.update = update
         self.others = others

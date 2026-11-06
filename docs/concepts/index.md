@@ -117,7 +117,7 @@ hide:
 
 ### فایل Session
 
-وقتی `TelegramClient('anon')` ایجاد می‌کنید، فایل `anon.session` در دایرکتوری جاری ایجاد می‌شود. این فایل شامل:
+وقتی `WyngClient('anon')` ایجاد می‌کنید، فایل `anon.session` در دایرکتوری جاری ایجاد می‌شود. این فایل شامل:
 
 - آدرس IP سرور و پورت
 - کلید احراز هویت
@@ -143,9 +143,9 @@ hide:
 ### مثال استفاده از رویداد
 
 ```python
-from wyngthon import TelegramClient, events
+from wyngthon import WyngClient, events
 
-client = TelegramClient('anon', api_id, api_hash)
+client = WyngClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage)
 async def my_event_handler(event):
@@ -219,10 +219,10 @@ Wyngthon بر پایه asyncio ساخته شده است. برای استفاده
 
 ```python
 import asyncio
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 
 async def main():
-    client = TelegramClient('anon', api_id, api_hash)
+    client = WyngClient('anon', api_id, api_hash)
     
     # استفاده از await برای عملیات ناهمگام
     me = await client.get_me()

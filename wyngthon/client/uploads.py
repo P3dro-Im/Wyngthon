@@ -19,7 +19,7 @@ except ImportError:
     PIL = None
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 
 class _CacheType:
@@ -111,7 +111,7 @@ class UploadMethods:
     # region Public methods
 
     async def send_file(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             file: 'typing.Union[hints.FileLike, typing.Sequence[hints.FileLike]]',
             *,
@@ -257,7 +257,7 @@ class UploadMethods:
                 the future).
 
             parse_mode (`object`, optional):
-                See the `TelegramClient.parse_mode
+                See the `WyngClient.parse_mode
                 <wyngthon.client.messageparse.MessageParseMethods.parse_mode>`
                 property for allowed values. Markdown parsing will be used by
                 default.
@@ -483,7 +483,7 @@ class UploadMethods:
         )
         return self._get_response_message(request, await self(request), entity)
 
-    async def _send_album(self: 'TelegramClient', entity, files, caption='',
+    async def _send_album(self: 'WyngClient', entity, files, caption='',
                           formatting_entities=None,
                           progress_callback=None, reply_to=None,
                           parse_mode=(), silent=None, schedule=None,
@@ -575,7 +575,7 @@ class UploadMethods:
         return self._get_response_message(random_ids, result, entity)
 
     async def upload_file(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             file: 'hints.FileLike',
             *,
             part_size_kb: float = None,

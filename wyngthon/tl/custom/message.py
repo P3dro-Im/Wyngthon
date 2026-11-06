@@ -383,7 +383,7 @@ class Message(ChatGetter, SenderGetter, TLObject):
     @property
     def client(self):
         """
-        Returns the `TelegramClient <wyngthon.client.telegramclient.TelegramClient>`
+        Returns the `WyngClient <wyngthon.client.wyngclient.WyngClient>`
         that *patched* this message. This will only be present if you
         **use the friendly methods**, it won't be there if you invoke
         raw API methods manually, in which case you should only access
@@ -847,7 +847,7 @@ class Message(ChatGetter, SenderGetter, TLObject):
 
         If you need to forward more than one message at once, don't use
         this `forward_to` method. Use a
-        `wyngthon.client.telegramclient.TelegramClient` instance directly.
+        `wyngthon.client.wyngclient.WyngClient` instance directly.
         """
         if self._client:
             kwargs['messages'] = self.id
@@ -910,7 +910,7 @@ class Message(ChatGetter, SenderGetter, TLObject):
 
         If you need to delete more than one message at once, don't use
         this `delete` method. Use a
-        `wyngthon.client.telegramclient.TelegramClient` instance directly.
+        `wyngthon.client.wyngclient.WyngClient` instance directly.
         """
         if self._client:
             return await self._client.delete_messages(

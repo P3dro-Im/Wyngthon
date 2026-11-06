@@ -10,7 +10,7 @@ from ..tl import types, functions, custom
 from .._updates import SessionState
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 
 class AuthMethods:
@@ -18,7 +18,7 @@ class AuthMethods:
     # region Public methods
 
     def start(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             phone: typing.Union[typing.Callable[[], str], str] = lambda: input('Please enter your phone (or bot token): '),
             password: typing.Union[typing.Callable[[], str], str] = lambda: getpass.getpass('Please enter your password: '),
             *,
@@ -27,7 +27,7 @@ class AuthMethods:
             code_callback: typing.Callable[[], typing.Union[str, int]] = None,
             first_name: str = 'New User',
             last_name: str = '',
-            max_attempts: int = 3) -> 'TelegramClient':
+            max_attempts: int = 3) -> 'WyngClient':
         """
         Starts the client (connects and logs in if necessary).
 
@@ -76,13 +76,13 @@ class AuthMethods:
                 retried or switching between signing in and signing up.
 
         Returns
-            This `TelegramClient`, so initialization
+            This `WyngClient`, so initialization
             can be chained with ``.start()``.
 
         Example
             .. code-block:: python
 
-                client = TelegramClient('anon', api_id, api_hash)
+                client = WyngClient('anon', api_id, api_hash)
 
                 # Starting as a bot account
                 await client.start(bot_token=bot_token)
@@ -129,7 +129,7 @@ class AuthMethods:
         )
 
     async def _start(
-            self: 'TelegramClient', phone, password, bot_token, force_sms,
+            self: 'WyngClient', phone, password, bot_token, force_sms,
             code_callback, first_name, last_name, max_attempts):
         if not self.is_connected():
             await self.connect()
@@ -268,7 +268,7 @@ class AuthMethods:
         return phone, phone_hash
 
     async def sign_in(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             phone: str = None,
             code: typing.Union[str, int] = None,
             *,
@@ -369,7 +369,7 @@ class AuthMethods:
         return await self._on_login(result.user)
 
     async def sign_up(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             code: typing.Union[str, int],
             first_name: str,
             last_name: str = '',
@@ -407,7 +407,7 @@ class AuthMethods:
         return user
 
     async def send_code_request(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             phone: str,
             *,
             force_sms: bool = False,
@@ -488,7 +488,7 @@ class AuthMethods:
 
         return result
 
-    async def qr_login(self: 'TelegramClient', ignored_ids: typing.List[int] = None) -> custom.QRLogin:
+    async def qr_login(self: 'WyngClient', ignored_ids: typing.List[int] = None) -> custom.QRLogin:
         """
         Initiates the QR login procedure.
 
@@ -528,7 +528,7 @@ class AuthMethods:
         await qr_login.recreate()
         return qr_login
 
-    async def log_out(self: 'TelegramClient') -> bool:
+    async def log_out(self: 'WyngClient') -> bool:
         """
         Logs out Telegram and deletes the current ``*.session`` file.
 
@@ -557,7 +557,7 @@ class AuthMethods:
         return True
 
     async def edit_2fa(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             current_password: str = None,
             new_password: str = None,
             *,

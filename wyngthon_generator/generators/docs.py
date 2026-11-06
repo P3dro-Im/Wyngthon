@@ -396,10 +396,10 @@ def _write_html_pages(tlobjects, methods, layer, input_res):
                     docs.write('<details>')
 
                 docs.write('''<pre>\
-<strong>from</strong> wyngthon.sync <strong>import</strong> TelegramClient
+<strong>from</strong> wyngthon.sync <strong>import</strong> WyngClient
 <strong>from</strong> wyngthon <strong>import</strong> functions, types
 
-<strong>with</strong> TelegramClient(name, api_id, api_hash) <strong>as</strong> client:
+<strong>with</strong> WyngClient(name, api_id, api_hash) <strong>as</strong> client:
     result = client(''')
                 tlobject.as_example(docs, indent=1)
                 docs.write(')\n')

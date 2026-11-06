@@ -31,7 +31,7 @@ DEFAULT_IPV6_IP = '2001:067c:04e8:f004:0000:0000:0000:000a'
 DEFAULT_PORT = 443
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 _base_log = logging.getLogger(__base_name__)
 
@@ -72,7 +72,7 @@ class _ExportState:
 
 
 # TODO How hard would it be to support both `trio` and `asyncio`?
-class TelegramBaseClient(abc.ABC):
+class WyngBaseClient(abc.ABC):
     """
     This is the abstract base class for the client. It defines some
     basic stuff like connecting, switching data center, etc, and
@@ -232,7 +232,7 @@ class TelegramBaseClient(abc.ABC):
             removed from the in-memory cache, which will degrade performance.
     """
 
-    # Current TelegramClient version
+    # Current WyngClient version
     __version__ = version.__version__
 
     # Cached server configuration (with .dc_options), can be "global"
@@ -242,7 +242,7 @@ class TelegramBaseClient(abc.ABC):
     # region Initialization
 
     def __init__(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             session: 'typing.Union[str, pathlib.Path, Session]',
             api_id: int = 4,
             api_hash: str = '014b35b6184100b085b0d0572f9b5103',
@@ -450,7 +450,7 @@ class TelegramBaseClient(abc.ABC):
     # region Properties
 
     @property
-    def loop(self: 'TelegramClient') -> asyncio.AbstractEventLoop:
+    def loop(self: 'WyngClient') -> asyncio.AbstractEventLoop:
         """
         Property with the ``asyncio`` event loop used by this client.
 
@@ -469,7 +469,7 @@ class TelegramBaseClient(abc.ABC):
         return helpers.get_running_loop()
 
     @property
-    def disconnected(self: 'TelegramClient') -> asyncio.Future:
+    def disconnected(self: 'WyngClient') -> asyncio.Future:
         """
         Property with a ``Future`` that resolves upon disconnection.
 
@@ -497,7 +497,7 @@ class TelegramBaseClient(abc.ABC):
 
     # region Connecting
 
-    async def connect(self: 'TelegramClient') -> None:
+    async def connect(self: 'WyngClient') -> None:
         """
         Connects to Telegram.
 
@@ -520,7 +520,7 @@ class TelegramBaseClient(abc.ABC):
                     print('Failed to connect')
         """
         if self.session is None:
-            raise ValueError('TelegramClient instance cannot be reused after logging out')
+            raise ValueError('WyngClient instance cannot be reused after logging out')
 
         if self._loop is None:
             self._loop = helpers.get_running_loop()
@@ -618,7 +618,7 @@ class TelegramBaseClient(abc.ABC):
         self._updates_handle = self.loop.create_task(self._update_loop())
         self._keepalive_handle = self.loop.create_task(self._keepalive_loop())
 
-    def is_connected(self: 'TelegramClient') -> bool:
+    def is_connected(self: 'WyngClient') -> bool:
         """
         Returns `True` if the user has connected.
 
@@ -633,7 +633,7 @@ class TelegramBaseClient(abc.ABC):
         sender = getattr(self, '_sender', None)
         return sender and sender.is_connected()
 
-    def disconnect(self: 'TelegramClient'):
+    def disconnect(self: 'WyngClient'):
         """
         Disconnects from Telegram.
 
@@ -670,7 +670,7 @@ class TelegramBaseClient(abc.ABC):
                 # However, it doesn't really make a lot of sense.
                 pass
 
-    def set_proxy(self: 'TelegramClient', proxy: typing.Union[tuple, dict]):
+    def set_proxy(self: 'WyngClient', proxy: typing.Union[tuple, dict]):
         """
         Changes the proxy which will be used on next (re)connection.
 
@@ -699,7 +699,7 @@ class TelegramBaseClient(abc.ABC):
             else:
                 connection._proxy = proxy
 
-    async def _save_states_and_entities(self: 'TelegramClient'):
+    async def _save_states_and_entities(self: 'WyngClient'):
         # As a hack to not need to change the session files, save ourselves with ``id=0`` and ``access_hash`` of our ``id``.
         # This way it is possible to determine our own ID by querying for 0. However, whether we're a bot is not saved.
         # Piggy-back on an arbitrary TL type with users and chats so the session can understand to read the entities.
@@ -721,7 +721,7 @@ class TelegramBaseClient(abc.ABC):
                 )
             )
 
-    async def _disconnect_coro(self: 'TelegramClient'):
+    async def _disconnect_coro(self: 'WyngClient'):
         if self.session is None:
             return  # already logged out and disconnected
 
@@ -755,7 +755,7 @@ class TelegramBaseClient(abc.ABC):
 
         await utils.maybe_async(self.session.close())
 
-    async def _disconnect(self: 'TelegramClient'):
+    async def _disconnect(self: 'WyngClient'):
         """
         Disconnect only, without closing the session. Used in reconnections
         to different data centers, where we don't want to close the session
@@ -767,7 +767,7 @@ class TelegramBaseClient(abc.ABC):
                               updates_handle=self._updates_handle,
                               keepalive_handle=self._keepalive_handle)
 
-    async def _switch_dc(self: 'TelegramClient', new_dc):
+    async def _switch_dc(self: 'WyngClient', new_dc):
         """
         Permanently switches the current connection to the new data center.
         """
@@ -783,7 +783,7 @@ class TelegramBaseClient(abc.ABC):
         await self._disconnect()
         return await self.connect()
 
-    async def _auth_key_callback(self: 'TelegramClient', auth_key):
+    async def _auth_key_callback(self: 'WyngClient', auth_key):
         """
         Callback from the sender whenever it needed to generate a
         new authorization key. This means we are not authorized.
@@ -795,7 +795,7 @@ class TelegramBaseClient(abc.ABC):
 
     # region Working with different connections/Data Centers
 
-    async def _get_dc(self: 'TelegramClient', dc_id, cdn=False):
+    async def _get_dc(self: 'WyngClient', dc_id, cdn=False):
         """Gets the Data Center (DC) associated to 'dc_id'"""
         cls = self.__class__
         if not cls._config:
@@ -826,7 +826,7 @@ class TelegramBaseClient(abc.ABC):
             except StopIteration:
                 raise ValueError(f'Failed to get DC {dc_id} (cdn = {cdn})')
 
-    async def _create_exported_sender(self: 'TelegramClient', dc_id):
+    async def _create_exported_sender(self: 'WyngClient', dc_id):
         """
         Creates a new exported `MTProtoSender` for the given `dc_id` and
         returns it. This method should be used by `_borrow_exported_sender`.
@@ -854,7 +854,7 @@ class TelegramBaseClient(abc.ABC):
         await sender.send(req)
         return sender
 
-    async def _borrow_exported_sender(self: 'TelegramClient', dc_id):
+    async def _borrow_exported_sender(self: 'WyngClient', dc_id):
         """
         Borrows a connected `MTProtoSender` for the given `dc_id`.
         If it's not cached, creates a new one if it doesn't exist yet,
@@ -886,7 +886,7 @@ class TelegramBaseClient(abc.ABC):
             state.add_borrow()
             return sender
 
-    async def _return_exported_sender(self: 'TelegramClient', sender):
+    async def _return_exported_sender(self: 'WyngClient', sender):
         """
         Returns a borrowed exported sender. If all borrows have
         been returned, the sender is cleanly disconnected.
@@ -896,7 +896,7 @@ class TelegramBaseClient(abc.ABC):
             state, _ = self._borrowed_senders[sender.dc_id]
             state.add_return()
 
-    async def _clean_exported_senders(self: 'TelegramClient'):
+    async def _clean_exported_senders(self: 'WyngClient'):
         """
         Cleans-up all unused exported senders by disconnecting them.
         """
@@ -910,7 +910,7 @@ class TelegramBaseClient(abc.ABC):
                     await sender.disconnect()
                     state.mark_disconnected()
 
-    async def _get_cdn_client(self: 'TelegramClient', cdn_redirect):
+    async def _get_cdn_client(self: 'WyngClient', cdn_redirect):
         """Similar to ._borrow_exported_client, but for CDNs"""
         session = self._exported_sessions.get(cdn_redirect.dc_id)
         if not session:
@@ -943,7 +943,7 @@ class TelegramBaseClient(abc.ABC):
     # region Invoking Telegram requests
 
     @abc.abstractmethod
-    def __call__(self: 'TelegramClient', request, ordered=False):
+    def __call__(self: 'WyngClient', request, ordered=False):
         """
         Invokes (sends) one or more MTProtoRequests and returns (receives)
         their result.
@@ -960,7 +960,7 @@ class TelegramBaseClient(abc.ABC):
             flood_sleep_threshold (`int` | `None`, optional):
                 The flood sleep threshold to use for this request. This overrides
                 the default value stored in
-                `client.flood_sleep_threshold <wyngthon.client.telegrambaseclient.TelegramBaseClient.flood_sleep_threshold>`
+                `client.flood_sleep_threshold <wyngthon.client.wyngbaseclient.WyngBaseClient.flood_sleep_threshold>`
 
         Returns:
             The result of the request (often a `TLObject`) or a list of
@@ -969,11 +969,11 @@ class TelegramBaseClient(abc.ABC):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def _update_loop(self: 'TelegramClient'):
+    def _update_loop(self: 'WyngClient'):
         raise NotImplementedError
 
     @abc.abstractmethod
-    async def _handle_auto_reconnect(self: 'TelegramClient'):
+    async def _handle_auto_reconnect(self: 'WyngClient'):
         raise NotImplementedError
 
     # endregion

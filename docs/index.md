@@ -81,10 +81,10 @@ hide:
 ## نمای کلی کتابخانه
 
 ```python
-from wyngthon import TelegramClient, events
+from wyngthon import WyngClient, events
 
 # ایجاد کلاینت
-client = TelegramClient('session_name')
+client = WyngClient('session_name')
 
 # ارسال پیام
 await client.send_message('username', 'سلام!')

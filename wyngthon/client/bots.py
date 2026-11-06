@@ -4,12 +4,12 @@ from .. import hints
 from ..tl import types, functions, custom
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 
 class BotMethods:
     async def inline_query(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             bot: 'hints.EntityLike',
             query: str,
             *,

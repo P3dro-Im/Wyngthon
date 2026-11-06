@@ -18,7 +18,7 @@ except ImportError:
     aiohttp = None
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 # Chunk sizes for upload.getFile must be multiples of the smallest size
 MIN_CHUNK_SIZE = 4096
@@ -216,7 +216,7 @@ class DownloadMethods:
     # region Public methods
 
     async def download_profile_photo(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             file: 'hints.FileLike' = None,
             *,
@@ -330,7 +330,7 @@ class DownloadMethods:
                 return None
 
     async def download_media(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             message: 'hints.MessageLike',
             file: 'hints.FileLike' = None,
             *,
@@ -451,7 +451,7 @@ class DownloadMethods:
             )
 
     async def download_file(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             input_location: 'hints.FileLike',
             file: 'hints.OutFileLike' = None,
             *,
@@ -525,7 +525,7 @@ class DownloadMethods:
         )
 
     async def _download_file(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             input_location: 'hints.FileLike',
             file: 'hints.OutFileLike' = None,
             *,
@@ -601,7 +601,7 @@ class DownloadMethods:
                 f.close()
 
     def iter_download(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             file: 'hints.FileLike',
             *,
             offset: int = 0,
@@ -707,7 +707,7 @@ class DownloadMethods:
         )
 
     def _iter_download(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             file: 'hints.FileLike',
             *,
             offset: int = 0,
@@ -820,7 +820,7 @@ class DownloadMethods:
         else:
             return None
 
-    def _download_cached_photo_size(self: 'TelegramClient', size, file):
+    def _download_cached_photo_size(self: 'WyngClient', size, file):
         # No need to download anything, simply write the bytes
         if isinstance(size, types.PhotoStrippedSize):
             data = utils.stripped_photo_to_jpg(size.bytes)
@@ -842,7 +842,7 @@ class DownloadMethods:
                 f.close()
         return file
 
-    async def _download_photo(self: 'TelegramClient', photo, file, date, thumb, progress_callback):
+    async def _download_photo(self: 'WyngClient', photo, file, date, thumb, progress_callback):
         """Specialized version of .download_media() for photos"""
         # Determine the photo and its largest size
         if isinstance(photo, types.MessageMediaPhoto):

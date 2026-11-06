@@ -77,10 +77,10 @@ MTProto پروتکل اصلی سروش‌پلاس است. با استفاده ا
 ### مثال Bot API
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 
 # ورود به عنوان ربات
-bot = TelegramClient('bot', api_id, api_hash)
+bot = WyngClient('bot', api_id, api_hash)
 await bot.start(bot_token='12345:0123456789abcdef')
 
 @bot.on(events.NewMessage)
@@ -105,10 +105,10 @@ await bot.run_until_disconnected()
 ### مثال MTProto (UserBot)
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 
 # ورود به عنوان کاربر
-client = TelegramClient('user', api_id, api_hash)
+client = WyngClient('user', api_id, api_hash)
 await client.start()
 
 @client.on(events.NewMessage)

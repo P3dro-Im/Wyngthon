@@ -1,13 +1,13 @@
 from . import (
     AccountMethods, AuthMethods, DownloadMethods, DialogMethods, ChatMethods,
     BotMethods, MessageMethods, UploadMethods, ButtonMethods, UpdateMethods,
-    MessageParseMethods, UserMethods, TelegramBaseClient
+    MessageParseMethods, UserMethods, WyngBaseClient
 )
 
 
-class TelegramClient(
+class WyngClient(
     AccountMethods, AuthMethods, DownloadMethods, DialogMethods, ChatMethods,
     BotMethods, MessageMethods, UploadMethods, ButtonMethods, UpdateMethods,
-    MessageParseMethods, UserMethods, TelegramBaseClient
+    MessageParseMethods, UserMethods, WyngBaseClient
 ):
     pass

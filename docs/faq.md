@@ -53,23 +53,23 @@ python3 -c "import wyngthon; print(wyngthon.__version__)"
 بله، Wyngthon API credentials پیش‌فرض دارد:
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 from wyngthon.sessions import StringSession
 
-client = TelegramClient(StringSession())
+client = WyngClient(StringSession())
 client.start()
 ```
 
 ### چگونه با ربات وارد شوم؟
 
 ```python
-from wyngthon.sync import TelegramClient
+from wyngthon.sync import WyngClient
 
 api_id = 12345
 api_hash = '0123456789abcdef0123456789abcdef'
 bot_token = '12345:0123456789abcdef0123456789abcdef'
 
-bot = TelegramClient('bot', api_id, api_hash).start(bot_token=bot_token)
+bot = WyngClient('bot', api_id, api_hash).start(bot_token=bot_token)
 ```
 
 ---
@@ -113,9 +113,9 @@ await message.reply('این یک پاسخ است!')
 ### چگونه به پیام‌های جدید پاسخ دهم؟
 
 ```python
-from wyngthon import TelegramClient, events
+from wyngthon import WyngClient, events
 
-client = TelegramClient('anon', api_id, api_hash)
+client = WyngClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage)
 async def handler(event):
@@ -161,7 +161,7 @@ string = session.save()
 
 ```python
 # ذخیره به صورت فایل
-client = TelegramClient('session_name', api_id, api_hash)
+client = WyngClient('session_name', api_id, api_hash)
 
 # ذخیره به صورت رشته
 string = client.session.save()
@@ -234,15 +234,15 @@ proxy = {
     'rdns': True
 }
 
-client = TelegramClient('anon', api_id, api_hash, proxy=proxy)
+client = WyngClient('anon', api_id, api_hash, proxy=proxy)
 ```
 
 ### چگونه از MTProto Proxy استفاده کنم؟
 
 ```python
-from wyngthon import TelegramClient, connection
+from wyngthon import WyngClient, connection
 
-client = TelegramClient(
+client = WyngClient(
     'anon', api_id, api_hash,
     connection=connection.ConnectionTcpMTProxyRandomizedIntermediate,
     proxy=('mtproxy.example.com', 2002, 'secret')
@@ -253,10 +253,10 @@ client = TelegramClient(
 
 ```python
 import asyncio
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 
 async def run_client(name, api_id, api_hash):
-    client = TelegramClient(name, api_id, api_hash)
+    client = WyngClient(name, api_id, api_hash)
     await client.start()
     await client.run_until_disconnected()
 

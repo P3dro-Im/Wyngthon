@@ -80,7 +80,7 @@ session_string = os.environ.get('SESSION_STRING')
 
 ```python
 # اشتباه - هرگز دسترسی کامل ندهید
-client = TelegramClient('session', api_id, api_hash)
+client = WyngClient('session', api_id, api_hash)
 await client.start()
 
 # درست - فقط دسترسی‌های لازم را بدهید
@@ -116,14 +116,14 @@ async def safe_send(client, entity, message):
 
 ```python
 import logging
-from wyngthon import TelegramClient, events
+from wyngthon import WyngClient, events
 
 logging.basicConfig(
     format='[%(levelname) %(asctime)s] %(name)s: %(message)s',
     level=logging.WARNING
 )
 
-client = TelegramClient('anon', api_id, api_hash)
+client = WyngClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage)
 async def handler(event):
@@ -144,13 +144,13 @@ async def rate_limited_send(client, entities, message, delay=1):
 ### ۴. استفاده از String Session برای محیط‌های ابری
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 from wyngthon.sessions import StringSession
 
 # برای محیط‌های ابری مانند Heroku
 import os
 session_string = os.environ.get('SESSION_STRING')
-client = TelegramClient(StringSession(session_string), api_id, api_hash)
+client = WyngClient(StringSession(session_string), api_id, api_hash)
 ```
 
 ---

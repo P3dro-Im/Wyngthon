@@ -11,7 +11,7 @@ Session‌ها بخش مهمی از کتابخانه هستند که اطلاع�
 
 ## Session چیست؟
 
-اولین پارامتری که به سازنده `TelegramClient` پاس می‌دهید `session` است و به طور پیش‌فرض نام session (یا مسیر کامل) است. یعنی اگر `TelegramClient('anon')` ایجاد کنید و متصل شوید، فایل `anon.session` در دایرکتوری جاری ایجاد می‌شود.
+اولین پارامتری که به سازنده `WyngClient` پاس می‌دهید `session` است و به طور پیش‌فرض نام session (یا مسیر کامل) است. یعنی اگر `WyngClient('anon')` ایجاد کنید و متصل شوید، فایل `anon.session` در دایرکتوری جاری ایجاد می‌شود.
 
 !!! note "یادداشت"
     اگر رشته پاس دهید، فایلی در دایرکتوری کاری جاری خواهد بود، اگرچه می‌توانید مسیرهای مطلق نیز پاس دهید.
@@ -61,17 +61,17 @@ from wyngthon.sessions import MemorySession, SQLiteSession, StringSession
 ### استفاده از StringSession
 
 ```python
-from wyngthon.sync import TelegramClient
+from wyngthon.sync import WyngClient
 from wyngthon.sessions import StringSession
 
-with TelegramClient(StringSession(string), api_id, api_hash) as client:
+with WyngClient(StringSession(string), api_id, api_hash) as client:
     ...  # استفاده از کلاینت
     
     # ذخیره session به صورت رشته
     string = client.session.save()
 
 # همچنین می‌توانید هر نوع session دیگری را به صورت رشته ذخیره کنید
-client = TelegramClient('sqlite-session', api_id, api_hash)
+client = WyngClient('sqlite-session', api_id, api_hash)
 string = StringSession.save(client.session)
 ```
 
@@ -96,10 +96,10 @@ string = StringSession.save(client.session)
 ساده‌ترین راه برای تولید StringSession به شرح زیر است:
 
 ```python
-from wyngthon.sync import TelegramClient
+from wyngthon.sync import WyngClient
 from wyngthon.sessions import StringSession
 
-with TelegramClient(StringSession(), api_id, api_hash) as client:
+with WyngClient(StringSession(), api_id, api_hash) as client:
     print(client.session.save())
 ```
 
@@ -116,7 +116,7 @@ with TelegramClient(StringSession(), api_id, api_hash) as client:
 
 ```python
 string = '1aaNk8EX-YRfwoRsebUkugFvht6DUPi_Q25UOCzOAqzc...'
-with TelegramClient(StringSession(string), api_id, api_hash) as client:
+with WyngClient(StringSession(string), api_id, api_hash) as client:
     client.loop.run_until_complete(client.send_message('me', 'سلام'))
 ```
 

@@ -21,8 +21,8 @@ class StopPropagation(Exception):
 
     Example usage:
 
-        >>> from wyngthon import TelegramClient, events
-        >>> client = TelegramClient(...)
+        >>> from wyngthon import WyngClient, events
+        >>> client = WyngClient(...)
         >>>
         >>> @client.on(events.NewMessage)
         ... async def delete(event):
@@ -58,8 +58,8 @@ def register(event=None):
     ...
     >>> # (somewhere else)
     ...
-    >>> from wyngthon import TelegramClient
-    >>> client = TelegramClient(...)
+    >>> from wyngthon import WyngClient
+    >>> client = WyngClient(...)
     >>> client.add_event_handler(handler)
 
     Remember that you can use this as a non-decorator

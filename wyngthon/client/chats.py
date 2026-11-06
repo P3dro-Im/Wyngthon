@@ -9,7 +9,7 @@ from ..requestiter import RequestIter
 from ..tl import types, functions, custom
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 _MAX_PARTICIPANTS_CHUNK_SIZE = 200
 _MAX_ADMIN_LOG_CHUNK_SIZE = 100
@@ -397,7 +397,7 @@ class ChatMethods:
     # region Public methods
 
     def iter_participants(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             limit: float = None,
             *,
@@ -468,7 +468,7 @@ class ChatMethods:
         )
 
     async def get_participants(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             *args,
             **kwargs) -> 'hints.TotalList':
         """
@@ -491,7 +491,7 @@ class ChatMethods:
 
 
     def iter_admin_log(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             limit: float = None,
             *,
@@ -639,7 +639,7 @@ class ChatMethods:
         )
 
     async def get_admin_log(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             *args,
             **kwargs) -> 'hints.TotalList':
         """
@@ -659,7 +659,7 @@ class ChatMethods:
     get_admin_log.__signature__ = inspect.signature(iter_admin_log)
 
     def iter_profile_photos(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             limit: int = None,
             *,
@@ -705,7 +705,7 @@ class ChatMethods:
         )
 
     async def get_profile_photos(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             *args,
             **kwargs) -> 'hints.TotalList':
         """
@@ -726,7 +726,7 @@ class ChatMethods:
     get_profile_photos.__signature__ = inspect.signature(iter_profile_photos)
 
     def action(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             action: 'typing.Union[str, types.TypeSendMessageAction]',
             *,
@@ -823,7 +823,7 @@ class ChatMethods:
             self, entity, action, delay=delay, auto_cancel=auto_cancel)
 
     async def edit_admin(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             user: 'hints.EntityLike',
             *,
@@ -972,7 +972,7 @@ class ChatMethods:
                 'You can only edit permissions in groups and channels')
 
     async def edit_permissions(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             user: 'typing.Optional[hints.EntityLike]' = None,
             until_date: 'hints.DateLike' = None,
@@ -1122,7 +1122,7 @@ class ChatMethods:
         ))
 
     async def kick_participant(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             user: 'typing.Optional[hints.EntityLike]'
     ):
@@ -1188,7 +1188,7 @@ class ChatMethods:
         return self._get_response_message(None, resp, entity)
 
     async def get_permissions(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             user: 'hints.EntityLike' = None
     ) -> 'typing.Optional[custom.ParticipantPermissions]':
@@ -1256,7 +1256,7 @@ class ChatMethods:
         raise ValueError('You must pass either a channel or a chat')
 
     async def get_stats(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             message: 'typing.Union[int, types.Message]' = None,
     ):

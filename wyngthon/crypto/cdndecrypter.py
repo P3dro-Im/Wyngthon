@@ -34,7 +34,7 @@ class CdnDecrypter:
         """
         Prepares a new CDN decrypter.
 
-        :param client: a TelegramClient connected to the main servers.
+        :param client: a WyngClient connected to the main servers.
         :param cdn_client: a new client connected to the CDN.
         :param cdn_redirect: the redirect file object that caused this call.
         :return: (CdnDecrypter, first chunk file data)

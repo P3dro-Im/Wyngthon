@@ -4,7 +4,7 @@ import sys
 import time
 from getpass import getpass
 
-from wyngthon import TelegramClient, events
+from wyngthon import WyngClient, events
 from wyngthon.errors import SessionPasswordNeededError
 from wyngthon.network import ConnectionTcpAbridged
 from wyngthon.utils import get_display_name
@@ -63,7 +63,7 @@ def get_env(name, message, cast=str):
             time.sleep(1)
 
 
-class InteractiveTelegramClient(TelegramClient):
+class InteractiveWyngClient(WyngClient):
     """Full featured SoroushPlus client, meant to be used on an interactive
        session to see what Wyngthon is capable off -
 
@@ -75,7 +75,7 @@ class InteractiveTelegramClient(TelegramClient):
     def __init__(self, session_user_id, api_id, api_hash,
                  proxy=None):
         """
-        Initializes the InteractiveTelegramClient.
+        Initializes the InteractiveWyngClient.
         :param session_user_id: Name of the *.session file.
         :param api_id: SoroushPlus's api_id acquired through my.telegram.org.
         :param api_hash: SoroushPlus's api_hash.
@@ -85,9 +85,9 @@ class InteractiveTelegramClient(TelegramClient):
 
         print('Initializing interactive example...')
 
-        # The first step is to initialize the TelegramClient, as we are
+        # The first step is to initialize the WyngClient, as we are
         # subclassing it, we need to call super().__init__(). On a more
-        # normal case you would want 'client = TelegramClient(...)'
+        # normal case you would want 'client = WyngClient(...)'
         super().__init__(
             # These parameters should be passed always, session name and API
             session_user_id, api_id, api_hash,
@@ -143,7 +143,7 @@ class InteractiveTelegramClient(TelegramClient):
                     self_user = await self.sign_in(password=pw)
 
     async def run(self):
-        """Main loop of the TelegramClient, will wait for user action"""
+        """Main loop of the WyngClient, will wait for user action"""
 
         # Once everything is ready, we can add an event handler.
         #
@@ -341,13 +341,13 @@ class InteractiveTelegramClient(TelegramClient):
 
     @staticmethod
     def download_progress_callback(downloaded_bytes, total_bytes):
-        InteractiveTelegramClient.print_progress(
+        InteractiveWyngClient.print_progress(
             'Downloaded', downloaded_bytes, total_bytes
         )
 
     @staticmethod
     def upload_progress_callback(uploaded_bytes, total_bytes):
-        InteractiveTelegramClient.print_progress(
+        InteractiveWyngClient.print_progress(
             'Uploaded', uploaded_bytes, total_bytes
         )
 
@@ -394,7 +394,7 @@ async def main():
     SESSION = os.environ.get('TG_SESSION', 'interactive')
     API_ID = get_env('TG_API_ID', 'Enter your API ID: ', int)
     API_HASH = get_env('TG_API_HASH', 'Enter your API hash: ')
-    client = InteractiveTelegramClient(SESSION, API_ID, API_HASH)
+    client = InteractiveWyngClient(SESSION, API_ID, API_HASH)
     await client.init()
     await client.run()
 

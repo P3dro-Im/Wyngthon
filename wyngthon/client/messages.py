@@ -10,7 +10,7 @@ from ..tl import types, functions
 _MAX_CHUNK_SIZE = 100
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 
 class _MessagesIter(RequestIter):
@@ -345,7 +345,7 @@ class MessageMethods:
     # region Message retrieval
 
     def iter_messages(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             limit: float = None,
             *,
@@ -555,7 +555,7 @@ class MessageMethods:
         )
 
     async def get_messages(
-            self: 'TelegramClient', *args, **kwargs
+            self: 'WyngClient', *args, **kwargs
     ) -> typing.Union['hints.TotalList', typing.Optional['types.Message']]:
         """
         Same as `iter_messages()`, but returns a
@@ -612,7 +612,7 @@ class MessageMethods:
     # region Message sending/editing/deleting
 
     async def _get_comment_data(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             message: 'typing.Union[int, types.Message]'
     ):
@@ -625,7 +625,7 @@ class MessageMethods:
         return utils.get_input_peer(chat), m.id
 
     async def send_message(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             message: 'hints.MessageLike' = '',
             *,
@@ -686,7 +686,7 @@ class MessageMethods:
                 :tl:`DocumentAttributeFilename` and so on.
 
             parse_mode (`object`, optional):
-                See the `TelegramClient.parse_mode
+                See the `WyngClient.parse_mode
                 <wyngthon.client.messageparse.MessageParseMethods.parse_mode>`
                 property for allowed values. Markdown parsing will be used by
                 default.
@@ -944,7 +944,7 @@ class MessageMethods:
         return self._get_response_message(request, result, entity)
 
     async def forward_messages(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             messages: 'typing.Union[hints.MessageIDLike, typing.Sequence[hints.MessageIDLike]]',
             from_peer: 'hints.EntityLike' = None,
@@ -1083,7 +1083,7 @@ class MessageMethods:
         return sent[0] if single else sent
 
     async def edit_message(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'typing.Union[hints.EntityLike, types.Message]',
             message: 'typing.Union[int, types.Message, types.InputMessageID, str]' = None,
             text: str = None,
@@ -1127,7 +1127,7 @@ class MessageMethods:
                 was a `Message <wyngthon.tl.custom.message.Message>`.
 
             parse_mode (`object`, optional):
-                See the `TelegramClient.parse_mode
+                See the `WyngClient.parse_mode
                 <wyngthon.client.messageparse.MessageParseMethods.parse_mode>`
                 property for allowed values. Markdown parsing will be used by
                 default.
@@ -1261,7 +1261,7 @@ class MessageMethods:
         return msg
 
     async def delete_messages(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             message_ids: 'typing.Union[hints.MessageIDLike, typing.Sequence[hints.MessageIDLike]]',
             *,
@@ -1338,7 +1338,7 @@ class MessageMethods:
     # region Miscellaneous
 
     async def send_read_acknowledge(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             message: 'typing.Union[hints.MessageIDLike, typing.Sequence[hints.MessageIDLike]]' = None,
             *,
@@ -1425,7 +1425,7 @@ class MessageMethods:
         return False
 
     async def pin_message(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             message: 'typing.Optional[hints.MessageIDLike]',
             *,
@@ -1466,7 +1466,7 @@ class MessageMethods:
         return await self._pin(entity, message, unpin=False, notify=notify, pm_oneside=pm_oneside)
 
     async def unpin_message(
-            self: 'TelegramClient',
+            self: 'WyngClient',
             entity: 'hints.EntityLike',
             message: 'typing.Optional[hints.MessageIDLike]' = None,
             *,

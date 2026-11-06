@@ -312,7 +312,7 @@ class ConnectionWebSocket(ObfuscatedConnection):
     WebSocket connection using Wyngthon's obfuscated transport
     and abridged packet codec.
 
-    The IP, port and DC ID are supplied by TelegramBaseClient.
+    The IP, port and DC ID are supplied by WyngBaseClient.
     """
 
     obfuscated_io = WebSocketObfuscatedIO
@@ -332,11 +332,11 @@ class ConnectionWebSocket(ObfuscatedConnection):
             )
 
         # These values are supplied by Connection.__init__()
-        # and originate from TelegramBaseClient.
+        # and originate from WyngBaseClient.
         host = self._ip
         port = self._port
 
-        # TelegramBaseClient decides the actual DC/host/port.
+        # WyngBaseClient decides the actual DC/host/port.
         # Port 443 uses secure WebSocket.
         protocol = (
             'wss'

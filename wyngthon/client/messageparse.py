@@ -6,7 +6,7 @@ from .. import helpers, utils
 from ..tl import types
 
 if typing.TYPE_CHECKING:
-    from .telegramclient import TelegramClient
+    from .wyngclient import WyngClient
 
 
 class MessageParseMethods:
@@ -14,7 +14,7 @@ class MessageParseMethods:
     # region Public properties
 
     @property
-    def parse_mode(self: 'TelegramClient'):
+    def parse_mode(self: 'WyngClient'):
         """
         This property is the default parse mode used when sending messages.
         Defaults to `wyngthon.extensions.markdown`. It will always
@@ -50,14 +50,14 @@ class MessageParseMethods:
         return self._parse_mode
 
     @parse_mode.setter
-    def parse_mode(self: 'TelegramClient', mode: str):
+    def parse_mode(self: 'WyngClient', mode: str):
         self._parse_mode = utils.sanitize_parse_mode(mode)
 
     # endregion
 
     # region Private methods
 
-    async def _replace_with_mention(self: 'TelegramClient', entities, i, user):
+    async def _replace_with_mention(self: 'WyngClient', entities, i, user):
         """
         Helper method to replace ``entities[i]`` to mention ``user``,
         or do nothing if it can't be found.
@@ -71,7 +71,7 @@ class MessageParseMethods:
         except (ValueError, TypeError):
             return False
 
-    async def _parse_message_text(self: 'TelegramClient', message, parse_mode):
+    async def _parse_message_text(self: 'WyngClient', message, parse_mode):
         """
         Returns a (parsed message, entities) tuple depending on ``parse_mode``.
         """
@@ -110,7 +110,7 @@ class MessageParseMethods:
 
         return message, msg_entities
 
-    def _get_response_message(self: 'TelegramClient', request, result, input_chat):
+    def _get_response_message(self: 'WyngClient', request, result, input_chat):
         """
         Extracts the response message known a request and Update result.
         The request may also be the ID of the message to match.

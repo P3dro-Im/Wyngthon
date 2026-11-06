@@ -99,10 +99,10 @@ pip install git+https://github.com/shayanheidari01/SPlusthon.git
 ## شروع سریع
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 from wyngthon.sessions import StringSession
 
-client = TelegramClient(StringSession())
+client = WyngClient(StringSession())
 
 client.start()
 ```
@@ -110,10 +110,10 @@ client.start()
 ## نمونه
 
 ```python
-from wyngthon import TelegramClient, events
+from wyngthon import WyngClient, events
 from wyngthon.sessions import StringSession
 
-client = TelegramClient(StringSession())
+client = WyngClient(StringSession())
 
 @client.on(events.NewMessage)
 async def handler(event):
@@ -151,12 +151,12 @@ message.download_media()
 ## Session ذخیره‌شده
 
 ```python
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 from wyngthon.sessions import StringSession
 
 session = "1AwA..."
 
-with TelegramClient(StringSession(session)) as client:
+with WyngClient(StringSession(session)) as client:
     print(client.get_me())
 ```
 

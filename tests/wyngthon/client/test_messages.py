@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from wyngthon import TelegramClient
+from wyngthon import WyngClient
 from wyngthon.client import MessageMethods
 from wyngthon.tl.types import PeerChat, MessageMediaDocument, Message, MessageEntityBold
 
@@ -14,7 +14,7 @@ async def test_send_message_with_file_forwards_args():
     arguments = {}
     sentinel = object()
 
-    for value, name in enumerate(inspect.signature(TelegramClient.send_message).parameters):
+    for value, name in enumerate(inspect.signature(WyngClient.send_message).parameters):
         if name in {'self', 'entity', 'file'}:
             continue  # positional
 
@@ -26,7 +26,7 @@ async def test_send_message_with_file_forwards_args():
 
         arguments[name] = value
 
-    class MockedClient(TelegramClient):
+    class MockedClient(WyngClient):
         # noinspection PyMissingConstructor
         def __init__(self):
             pass
