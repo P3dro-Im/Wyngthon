@@ -54,10 +54,10 @@ hide:
 ### ارسال پیام ساده
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         await client.send_message('me', 'سلام، خودم!')
         
         # ارسال با قالب‌بندی
@@ -73,10 +73,10 @@ asyncio.run(main())
 ### دریافت پیام‌ها
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت آخرین پیام‌ها
         messages = await client.get_messages('me', limit=10)
         
@@ -90,10 +90,10 @@ asyncio.run(main())
 ### ارسال فایل
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال عکس
         await client.send_file('me', '/path/to/photo.jpg')
         
@@ -111,9 +111,9 @@ asyncio.run(main())
 ### پاسخ خودکار به پیام‌ها
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage(pattern=r'(?i)hi|hello'))
 async def handler(event):
@@ -130,9 +130,9 @@ client.run_until_disconnected()
 ### پاسخ به پیام خاص
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage(outgoing=True, pattern=r'\.save'))
 async def handler(event):
@@ -153,10 +153,10 @@ client.run_until_disconnected()
 ### مدیریت خطا
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 from wyngthon.errors import FloodWaitError, RPCError
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 async def safe_send(client, entity, message):
     try:
@@ -182,10 +182,10 @@ client.run_until_disconnected()
 
 ```python
 import asyncio
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def run_client(name, api_id, api_hash):
-    client = SoroushClient(name, api_id, api_hash)
+    client = TelegramClient(name, api_id, api_hash)
     await client.start()
     print(f'کلاینت {name} شروع شد')
     await client.run_until_disconnected()

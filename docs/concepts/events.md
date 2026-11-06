@@ -14,9 +14,9 @@ hide:
 بیایید با یک مثال برای پاسخ خودکار شروع کنیم:
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage)
 async def my_event_handler(event):
@@ -32,9 +32,9 @@ client.run_until_disconnected()
 ### ایجاد کلاینت
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 ```
 
 ایجاد عادی است (البته نام session، API ID و hash را پاس دهید). چیزی نیست که قبلاً ندانیم.

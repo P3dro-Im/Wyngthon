@@ -12,11 +12,11 @@ hide:
 ## دریافت اطلاعات کامل کاربر
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.users import GetFullUserRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت اطلاعات کامل کاربر
         full = await client(GetFullUserRequest('username'))
         
@@ -38,11 +38,11 @@ asyncio.run(main())
 ## بروزرسانی نام و بیوگرافی
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.account import UpdateProfileRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # بروزرسانی نام و بیوگرافی
         await client(UpdateProfileRequest(
             first_name='نام جدید',
@@ -61,11 +61,11 @@ asyncio.run(main())
 ## بروزرسانی یوزرنیم
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.account import UpdateUsernameRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # بروزرسانی یوزرنیم
         await client(UpdateUsernameRequest('new_username'))
         
@@ -80,11 +80,11 @@ asyncio.run(main())
 ## بروزرسانی عکس پروفایل
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.photos import UploadProfilePhotoRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # آپلود عکس جدید
         file = await client.upload_file('/path/to/photo.jpg')
         
@@ -102,10 +102,10 @@ asyncio.run(main())
 ## دانلود عکس پروفایل
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دانلود عکس پروفایل خودتان
         await client.download_profile_photo('me')
         
@@ -123,10 +123,10 @@ asyncio.run(main())
 ## دریافت لیست مخاطبین
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت مخاطبین
         contacts = await client.get_contacts()
         
@@ -142,10 +142,10 @@ asyncio.run(main())
 ## جستجوی کاربران
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # جستجوی کاربر با یوزرنیم
         user = await client.get_entity('username')
         print(f'نام کاربر: {user.first_name}')
@@ -163,10 +163,10 @@ asyncio.run(main())
 ## بررسی وضعیت کاربر
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت اطلاعات کاربر
         user = await client.get_entity('username')
         

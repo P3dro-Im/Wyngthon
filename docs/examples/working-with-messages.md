@@ -14,10 +14,10 @@ hide:
 ### ارسال به خودتان
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال به خودتان
         await client.send_message('me', 'سلام، خودم!')
         
@@ -31,10 +31,10 @@ asyncio.run(main())
 ### ارسال به یوزرنیم
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال به یوزرنیم
         await client.send_message('username', 'سلام از Wyngthon!')
 
@@ -45,10 +45,10 @@ asyncio.run(main())
 ### ارسال به شماره تلفن
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال به شماره تلفن (باید در لیست مخاطبین باشد)
         await client.send_message('+989123456789', 'سلام دوست من!')
 
@@ -59,10 +59,10 @@ asyncio.run(main())
 ### ارسال به شناسه چت
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال به شناسه چت
         await client.send_message(-100123456, 'سلام گروه!')
 
@@ -77,10 +77,10 @@ asyncio.run(main())
 ### ارسال عکس
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال عکس
         await client.send_file('me', '/path/to/photo.jpg')
         
@@ -94,10 +94,10 @@ asyncio.run(main())
 ### ارسال فایل
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال فایل
         await client.send_file('me', '/path/to/file.pdf')
         
@@ -111,10 +111,10 @@ asyncio.run(main())
 ### ارسال ویدیو
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال ویدیو
         await client.send_file('me', '/path/to/video.mp4')
         
@@ -132,10 +132,10 @@ asyncio.run(main())
 ### دریافت آخرین پیام‌ها
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت آخرین ۱۰ پیام
         messages = await client.get_messages('me', limit=10)
         
@@ -149,10 +149,10 @@ asyncio.run(main())
 ### دریافت پیام‌های خاص
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت پیام با شناسه
         message = await client.get_messages('me', ids=123)
         print(f'پیام: {message.text}')
@@ -169,10 +169,10 @@ asyncio.run(main())
 ### جستجوی پیام‌ها
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # جستجوی پیام‌ها
         messages = await client.get_messages('me', search='کلمه جستجو')
         
@@ -190,10 +190,10 @@ asyncio.run(main())
 ### ویرایش پیام
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال پیام
         message = await client.send_message('me', 'پیام اصلی')
         
@@ -207,10 +207,10 @@ asyncio.run(main())
 ### حذف پیام
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال پیام
         message = await client.send_message('me', 'پیام برای حذف')
         
@@ -231,10 +231,10 @@ asyncio.run(main())
 ### پاسخ مستقیم
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت پیام
         message = await client.get_messages('me', ids=123)
         
@@ -248,9 +248,9 @@ asyncio.run(main())
 ### پاسخ با استفاده از event
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage)
 async def handler(event):
@@ -271,10 +271,10 @@ client.run_until_disconnected()
 ### دانلود عکس
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت پیام‌ها
         messages = await client.get_messages('me', limit=10)
         
@@ -291,10 +291,10 @@ asyncio.run(main())
 ### دانلود فایل
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت پیام‌ها
         messages = await client.get_messages('me', limit=10)
         

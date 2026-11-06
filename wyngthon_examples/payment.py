@@ -1,4 +1,4 @@
-from wyngthon import SoroushClient, events, types, functions
+from wyngthon import TelegramClient, events, types, functions
 
 import asyncio
 import logging
@@ -33,7 +33,7 @@ def get_env(name, message, cast=str):
             time.sleep(1)
 
 
-bot = SoroushClient(
+bot = TelegramClient(
     os.environ.get('TG_SESSION', 'payment'),
     get_env('TG_API_ID', 'Enter your API ID: ', int),
     get_env('TG_API_HASH', 'Enter your API hash: '),

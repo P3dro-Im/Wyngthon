@@ -12,11 +12,11 @@ hide:
 ## عضویت در کانال عمومی
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.channels import JoinChannelRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت اطلاعات کانال
         channel = await client.get_entity('channel_username')
         
@@ -34,11 +34,11 @@ asyncio.run(main())
 ## خروج از کانال
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.channels import LeaveChannelRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت اطلاعات کانال
         channel = await client.get_entity('channel_username')
         
@@ -56,11 +56,11 @@ asyncio.run(main())
 ## عضویت با لینک دعوت
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.messages import ImportChatInviteRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # عضویت با لینک دعوت
         # لینک دعوت: https://t.me/joinchat/AAAAAFFszQPyPEZ7wgxLtd
         # هش: AAAAFAFFszQPyPEZ7wgxLtd
@@ -77,11 +77,11 @@ asyncio.run(main())
 ## اضافه کردن کاربر به چت
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.messages import AddChatUserRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت اطلاعات چت و کاربر
         chat = await client.get_entity('chat_username')
         user = await client.get_entity('user_username')
@@ -104,11 +104,11 @@ asyncio.run(main())
 ## اضافه کردن کاربر به کانال
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.channels import InviteToChannelRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت اطلاعات کانال و کاربر
         channel = await client.get_entity('channel_username')
         user = await client.get_entity('user_username')
@@ -130,11 +130,11 @@ asyncio.run(main())
 ## بررسی لینک دعوت
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.messages import CheckChatInviteRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # بررسی لینک دعوت
         result = await client(CheckChatInviteRequest('hash_from_link'))
         
@@ -150,11 +150,11 @@ asyncio.run(main())
 ## افزایش تعداد بازدید در کانال
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.messages import GetMessagesViewsRequest
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت اطلاعات کانال
         channel = await client.get_entity('channel_username')
         
@@ -183,12 +183,12 @@ asyncio.run(main())
 ## دریافت لیست اعضا
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.tl.functions.channels import GetParticipantsRequest
 from wyngthon.tl.types import ChannelParticipantsSearch
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # دریافت لیست اعضا
         result = await client(GetParticipantsRequest(
             channel='channel_username',

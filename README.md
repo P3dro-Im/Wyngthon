@@ -62,7 +62,7 @@
 را به‌عنوان **کاربر** یا **ربات** فراهم می‌کند.
 
 این پروژه بر پایه **Telethon** توسعه یافته و برای معماری اختصاصی سروش پلاس
-بازطراحی شده است. کتابخانه از **TL Schema (Layer 182)**،
+بازطراحی شده است. کتابخانه از **TL Schema (Layer 229)**،
 **RSA Encryption**، **DC Routing** و **WebSocket Transport**
 پشتیبانی می‌کند و تجربه‌ای سریع، پایدار و نزدیک به کلاینت رسمی ارائه می‌دهد.
 
@@ -99,10 +99,10 @@ pip install git+https://github.com/shayanheidari01/SPlusthon.git
 ## شروع سریع
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.sessions import StringSession
 
-client = SoroushClient(StringSession())
+client = TelegramClient(StringSession())
 
 client.start()
 ```
@@ -110,10 +110,10 @@ client.start()
 ## نمونه
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 from wyngthon.sessions import StringSession
 
-client = SoroushClient(StringSession())
+client = TelegramClient(StringSession())
 
 @client.on(events.NewMessage)
 async def handler(event):
@@ -151,12 +151,12 @@ message.download_media()
 ## Session ذخیره‌شده
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 from wyngthon.sessions import StringSession
 
 session = "1AwA..."
 
-with SoroushClient(StringSession(session)) as client:
+with TelegramClient(StringSession(session)) as client:
     print(client.get_me())
 ```
 

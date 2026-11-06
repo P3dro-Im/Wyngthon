@@ -61,10 +61,10 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    client = SoroushClient('anon', api_id, api_hash)
+    client = TelegramClient('anon', api_id, api_hash)
     
     # استفاده از await برای عملیات ناهمگام
     me = await client.get_me()
@@ -81,10 +81,10 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         me = await client.get_me()
         print(me.stringify())
         
@@ -96,9 +96,9 @@ asyncio.run(main())
 ### استفاده از client.loop
 
 ```python
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 async def main():
     me = await client.get_me()
@@ -118,10 +118,10 @@ with client:
 
 ```python
 import asyncio
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         # ارسال چند پیام
         for i in range(5):
             await client.send_message('me', f'پیام {i+1}')
@@ -134,10 +134,10 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    with SoroushClient('anon', api_id, api_hash) as client:
+    with TelegramClient('anon', api_id, api_hash) as client:
         async for message in client.iter_messages('me'):
             print(f'پیام {message.id}: {message.text}')
             
@@ -151,9 +151,9 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage(pattern=r'(?i)hi|hello'))
 async def handler1(event):

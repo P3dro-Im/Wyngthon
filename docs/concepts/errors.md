@@ -169,9 +169,9 @@ async def send_message(client, entity, message):
 ### استفاده از on_error
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage)
 async def handler(event):
@@ -195,7 +195,7 @@ async def error_handler(event):
 
 ```python
 import logging
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 
 # تنظیم logging
 logging.basicConfig(
@@ -203,7 +203,7 @@ logging.basicConfig(
     level=logging.WARNING
 )
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage)
 async def handler(event):
@@ -221,10 +221,10 @@ async def handler(event):
 ### ارسال پیام با مدیریت خطا
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 from wyngthon.errors import FloodWaitError, PeerFloodError, RPCError
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 async def send_with_retry(client, entity, message, max_retries=3):
     for attempt in range(max_retries):

@@ -117,7 +117,7 @@ pip install python-socks[asyncio]
 سپس پروکسی را به کلاینت پاس دهید:
 
 ```python
-SoroushClient('session_name', api_id, api_hash, proxy=proxy_config)
+TelegramClient('session_name', api_id, api_hash, proxy=proxy_config)
 ```
 
 ---
@@ -126,7 +126,7 @@ SoroushClient('session_name', api_id, api_hash, proxy=proxy_config)
 
 ### خطای ImportError
 
-اگر خطای `ImportError: cannot import name 'SoroushClient'` دریافت کردید:
+اگر خطای `ImportError: cannot import name 'TelegramClient'` دریافت کردید:
 
 1. مطمئن شوید نام فایل اسکریپت شما `wyngthon.py` نیست
 2. کتابخانه را دوباره نصب کنید: `pip install --upgrade wyngthon`

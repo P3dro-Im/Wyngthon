@@ -117,7 +117,7 @@ hide:
 
 ### فایل Session
 
-وقتی `SoroushClient('anon')` ایجاد می‌کنید، فایل `anon.session` در دایرکتوری جاری ایجاد می‌شود. این فایل شامل:
+وقتی `TelegramClient('anon')` ایجاد می‌کنید، فایل `anon.session` در دایرکتوری جاری ایجاد می‌شود. این فایل شامل:
 
 - آدرس IP سرور و پورت
 - کلید احراز هویت
@@ -143,9 +143,9 @@ hide:
 ### مثال استفاده از رویداد
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 
-client = SoroushClient('anon', api_id, api_hash)
+client = TelegramClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage)
 async def my_event_handler(event):
@@ -219,10 +219,10 @@ Wyngthon بر پایه asyncio ساخته شده است. برای استفاده
 
 ```python
 import asyncio
-from wyngthon import SoroushClient
+from wyngthon import TelegramClient
 
 async def main():
-    client = SoroushClient('anon', api_id, api_hash)
+    client = TelegramClient('anon', api_id, api_hash)
     
     # استفاده از await برای عملیات ناهمگام
     me = await client.get_me()

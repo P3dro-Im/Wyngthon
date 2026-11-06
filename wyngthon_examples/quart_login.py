@@ -3,7 +3,7 @@ import os
 
 from quart import Quart, render_template_string, request
 
-from wyngthon import SoroushClient, utils
+from wyngthon import TelegramClient, utils
 from wyngthon.errors import SessionPasswordNeededError
 
 
@@ -51,7 +51,7 @@ API_ID = int(get_env('TG_API_ID', 'Enter your API ID: '))
 API_HASH = get_env('TG_API_HASH', 'Enter your API hash: ')
 
 # Wyngthon client
-client = SoroushClient(SESSION, API_ID, API_HASH)
+client = TelegramClient(SESSION, API_ID, API_HASH)
 client.parse_mode = 'html'  # <- Render things nicely
 phone = None
 
@@ -131,7 +131,7 @@ async def root():
 
 
 # By default, `Quart.run` uses `asyncio.run()`, which creates a new asyncio
-# event loop. If we had connected the `SoroushClient` before, `wyngthon` will
+# event loop. If we had connected the `TelegramClient` before, `wyngthon` will
 # use `asyncio.get_running_loop()` to create some additional tasks. If these
 # loops are different, it won't work.
 #

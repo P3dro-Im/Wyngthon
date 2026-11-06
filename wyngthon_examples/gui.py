@@ -11,7 +11,7 @@ import tkinter.constants
 import tkinter.scrolledtext
 import tkinter.ttk
 
-from wyngthon import SoroushClient, events, utils
+from wyngthon import TelegramClient, events, utils
 
 # Some configuration for the app
 TITLE = 'Wyngthon GUI'
@@ -342,7 +342,7 @@ class App(tkinter.Tk):
 
 
 async def main(interval=0.05):
-    client = SoroushClient(SESSION, API_ID, API_HASH)
+    client = TelegramClient(SESSION, API_ID, API_HASH)
     try:
         await client.connect()
     except Exception as e:

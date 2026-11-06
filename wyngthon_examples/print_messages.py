@@ -4,7 +4,7 @@ import os
 import sys
 import time
 
-from wyngthon import SoroushClient, events, utils
+from wyngthon import TelegramClient, events, utils
 
 
 def get_env(name, message, cast=str):
@@ -25,7 +25,7 @@ api_hash = get_env('TG_API_HASH', 'Enter your API hash: ')
 proxy = None  # https://github.com/romis2012/python-socks
 
 # Create and start the client so we can make requests (we don't here)
-client = SoroushClient(session, api_id, api_hash, proxy=proxy).start()
+client = TelegramClient(session, api_id, api_hash, proxy=proxy).start()
 
 
 # `pattern` is a regex, see https://docs.python.org/3/library/re.html

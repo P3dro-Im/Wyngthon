@@ -9,14 +9,14 @@ hide:
 
 ---
 
-## کلاس SoroushClient
+## کلاس TelegramClient
 
 کلاس اصلی کتابخانه برای تعامل با سروش‌پلاس.
 
 ### سازنده
 
 ```python
-SoroushClient(session=None, api_id=None, api_hash=None, 
+TelegramClient(session=None, api_id=None, api_hash=None, 
               connection_retries=None, timeout=timedelta(seconds=60), 
               request_retries=None, connection=None, 
               proxy=None, local_addr=None)
@@ -367,7 +367,7 @@ from wyngthon.sessions import StringSession
 session = StringSession()
 
 # استفاده از StringSession
-client = SoroushClient(StringSession(string), api_id, api_hash)
+client = TelegramClient(StringSession(string), api_id, api_hash)
 
 # ذخیره StringSession
 string = client.session.save()

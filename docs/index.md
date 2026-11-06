@@ -81,10 +81,10 @@ hide:
 ## نمای کلی کتابخانه
 
 ```python
-from wyngthon import SoroushClient, events
+from wyngthon import TelegramClient, events
 
 # ایجاد کلاینت
-client = SoroushClient('session_name')
+client = TelegramClient('session_name')
 
 # ارسال پیام
 await client.send_message('username', 'سلام!')

@@ -1,10 +1,10 @@
 import pytest
 
-from wyngthon import SoroushClient, events, types, utils
+from wyngthon import TelegramClient, events, types, utils
 
 
 def get_client():
-    return SoroushClient(None, 1, '1')
+    return TelegramClient(None, 1, '1')
 
 
 def get_user_456():
