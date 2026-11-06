@@ -5,12 +5,12 @@
 <h1>Wyngthon</h1>
 
 <p>
-  <strong>Asynchronous Python library for the Soroush Plus API</strong>
+  <strong>Asynchronous Python library for the Wyng API</strong>
 </p>
 
 <p>
   Built on <strong>Telethon</strong> and fully adapted for the
-  <strong>Soroush Plus</strong> protocol.
+  <strong>Wyng</strong> protocol.
 </p>
 
 <p>
@@ -49,7 +49,7 @@
 •
 <a href="https://github.com/P3dro-Im/Wyngthon"><strong>GitHub</strong></a>
 •
-<a href="https://web.wyng.ir"><strong>Soroush Plus</strong></a>
+<a href="https://web.wyng.ir"><strong>Wyng</strong></a>
 
 </p>
 
@@ -58,15 +58,15 @@
 ---
 
 کتابخانه Wyngthon یک کتابخانه مدرن و قدرتمند برای **Python 3** است که بر پایه
-**asyncio** توسعه یافته و امکان تعامل مستقیم با **API پیام‌رسان سروش پلاس**
+**asyncio** توسعه یافته و امکان تعامل مستقیم با **API پیام‌رسان وینگ**
 را به‌عنوان **کاربر** یا **ربات** فراهم می‌کند.
 
-این پروژه بر پایه **Telethon** توسعه یافته و برای معماری اختصاصی سروش پلاس
+این پروژه بر پایه **Telethon** توسعه یافته و برای معماری اختصاصی وینگ
 بازطراحی شده است. کتابخانه از **TL Schema (Layer 229)**،
 **RSA Encryption**، **DC Routing** و **WebSocket Transport**
 پشتیبانی می‌کند و تجربه‌ای سریع، پایدار و نزدیک به کلاینت رسمی ارائه می‌دهد.
 
-> **Note:** لطفاً هنگام استفاده از این کتابخانه، قوانین و شرایط استفاده سروش پلاس را
+> **Note:** لطفاً هنگام استفاده از این کتابخانه، قوانین و شرایط استفاده وینگ را
 > رعایت کنید. مسئولیت استفاده از این پروژه بر عهده کاربر است.
 
 ## ویژگی‌ها
@@ -74,7 +74,7 @@
 - پشتیبانی کامل از حساب کاربری و ربات
 - مبتنی بر asyncio با کارایی بالا
 - امکان استفاده به‌صورت Sync و Async
-- پشتیبانی کامل از TL Schema اختصاصی سروش
+- پشتیبانی کامل از TL Schema اختصاصی وینگ
 - مدیریت Session و StringSession
 - پشتیبانی از WebSocket
 - پشتیبانی از DC Routing
