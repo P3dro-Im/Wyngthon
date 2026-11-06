@@ -193,7 +193,7 @@ class ConnectionWebSocket(ObfuscatedConnection):
     WebSocket transport for Soroush messenger.
 
     Connects to ``wss://{ip}:{port}/apiws`` with Origin header
-    set to ``https://web.splus.ir``, then uses obfuscated+abridged
+    set to ``https://web.wyng.ir``, then uses obfuscated+abridged
     protocol on top of the WebSocket binary frames.
     """
     obfuscated_io = WebSocketObfuscatedIO

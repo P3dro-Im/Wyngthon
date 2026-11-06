@@ -185,7 +185,7 @@ client = WyngClient(StringSession(session_string), api_id, api_hash)
 
 ## منابع مفید
 
-- [قوانین وینگ](https://web.splus.ir/terms)
+- [قوانین وینگ](https://web.wyng.ir/terms)
 - [API مستندات وینگ](https://core.splus.ir/)
 - [GitHub Wyngthon](https://github.com/P3dro-Im/Wyngthon)
 

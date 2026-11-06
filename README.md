@@ -49,7 +49,7 @@
 •
 <a href="https://github.com/P3dro-Im/Wyngthon"><strong>GitHub</strong></a>
 •
-<a href="https://web.splus.ir"><strong>Soroush Plus</strong></a>
+<a href="https://web.wyng.ir"><strong>Soroush Plus</strong></a>
 
 </p>
 
