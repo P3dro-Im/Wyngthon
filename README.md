@@ -15,12 +15,12 @@
 
 <p>
 
-<a href="https://pypi.org/project/splusthon/">
-  <img src="https://img.shields.io/pypi/v/splusthon.svg?style=for-the-badge" alt="PyPI">
+<a href="https://pypi.org/project/wyngthon/">
+  <img src="https://img.shields.io/pypi/v/wyngthon.svg?style=for-the-badge" alt="PyPI">
 </a>
 
-<a href="https://pypi.org/project/splusthon/">
-  <img src="https://img.shields.io/pypi/pyversions/splusthon.svg?style=for-the-badge" alt="Python">
+<a href="https://pypi.org/project/wyngthon/">
+  <img src="https://img.shields.io/pypi/pyversions/wyngthon.svg?style=for-the-badge" alt="Python">
 </a>
 
 <a href="LICENSE">
@@ -35,17 +35,13 @@
   <img src="https://img.shields.io/github/issues/P3dro-Im/Wyngthon?style=for-the-badge" alt="Issues">
 </a>
 
-<a href="https://github.com/P3dro-Im/Wyngthon/actions">
-  <img src="https://img.shields.io/github/actions/workflow/status/P3dro-Im/Wyngthon/tests.yml?style=for-the-badge" alt="Build">
-</a>
-
 </p>
 
 <p>
 
 <a href="https://p3dro-im.github.io/Wyngthon/"><strong>Documentation</strong></a>
 •
-<a href="https://pypi.org/project/splusthon/"><strong>PyPI</strong></a>
+<a href="https://pypi.org/project/wyngthon/"><strong>PyPI</strong></a>
 •
 <a href="https://github.com/P3dro-Im/Wyngthon"><strong>GitHub</strong></a>
 •

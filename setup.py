@@ -185,7 +185,7 @@ def main(argv):
             print(e)
             return
 
-        remove_dirs = ['__pycache__', 'build', 'dist', 'Wyngthon.egg-info']
+        remove_dirs = ['__pycache__', 'build', 'dist', 'wyngthon.egg-info']
         for root, _dirs, _files in os.walk(LIBRARY_DIR, topdown=False):
             # setuptools is including __pycache__ for some reason (#1605)
             if root.endswith('/__pycache__'):
@@ -196,7 +196,7 @@ def main(argv):
         run('python3 setup.py sdist', shell=True)
         run('python3 setup.py bdist_wheel', shell=True)
         run('twine upload dist/*', shell=True)
-        for x in ('build', 'dist', 'Wyngthon.egg-info'):
+        for x in ('build', 'dist', 'wyngthon.egg-info'):
             shutil.rmtree(x, ignore_errors=True)
 
     else:
@@ -212,7 +212,7 @@ def main(argv):
             version = re.search(r"^__version__\s*=\s*'(.*)'.*$",
                                 f.read(), flags=re.MULTILINE).group(1)
         setup(
-            name='Wyngthon',
+            name='wyngthon',
             version=version,
             description="Wyng library for Python",
             long_description=long_description,
@@ -228,7 +228,7 @@ def main(argv):
             # See https://stackoverflow.com/a/40300957/4759433
             # -> https://www.python.org/dev/peps/pep-0345/#requires-python
             # -> http://setuptools.readthedocs.io/en/latest/setuptools.html
-            python_requires='>=3.7',
+            python_requires='>=3.8',
 
             # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
             classifiers=[
@@ -243,7 +243,6 @@ def main(argv):
                 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
 
                 'Programming Language :: Python :: 3',
-                'Programming Language :: Python :: 3.7',
                 'Programming Language :: Python :: 3.8',
                 'Programming Language :: Python :: 3.9',
                 'Programming Language :: Python :: 3.10',
