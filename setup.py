@@ -212,7 +212,7 @@ def main(argv):
             version = re.search(r"^__version__\s*=\s*'(.*)'.*$",
                                 f.read(), flags=re.MULTILINE).group(1)
         setup(
-            name='wyngthon',
+            name='Wyngthon',
             version=version,
             description="Wyng library for Python",
             long_description=long_description,
