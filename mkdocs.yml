@@ -79,6 +79,13 @@ markdown_extensions:
       permalink: true
 
 extra:
+  alternate:
+    - name: فارسی
+      link: /Wyngthon/
+      lang: fa
+    - name: English
+      link: /Wyngthon/en/
+      lang: en
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/P3dro-Im/Wyngthon
