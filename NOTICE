@@ -16,6 +16,15 @@ Copyright (C) Shayan Heidari and the SPlusthon contributors for those parts.
 
 ----------------------------------------------------------------------------
 
+wyngthon_generator/data/api.tl (TL schema, layer 229) is taken from the
+Telegram Desktop project (https://github.com/telegramdesktop/tdesktop,
+Telegram/SourceFiles/mtproto/scheme/api.tl, release v7.2.10), which is
+distributed under the GNU General Public License, version 3 with an OpenSSL
+exception. wyngthon_generator/data/mtproto.tl, errors.csv, methods.csv and
+friendly.csv follow Telethon's generator data.
+
+----------------------------------------------------------------------------
+
 This project includes code derived from Telethon
 (https://github.com/LonamiWebs/Telethon), which is distributed under the
 MIT License. The original copyright and permission notice is reproduced
