@@ -20,7 +20,7 @@
 </a>
 
 <a href="https://pypi.org/project/wyngthon/">
-  <img src="https://img.shields.io/pypi/pyversions/wyngthon.svg?style=for-the-badge" alt="Python">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge" alt="Python">
 </a>
 
 <a href="https://github.com/P3dro-Im/Wyngthon/blob/main/LICENSE">
