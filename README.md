@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="logo.svg" width="180" alt="Wyngthon Logo">
+<img src="https://raw.githubusercontent.com/P3dro-Im/Wyngthon/main/logo.svg" width="180" alt="Wyngthon Logo">
 
 <h1>Wyngthon</h1>
 
@@ -23,7 +23,7 @@
   <img src="https://img.shields.io/pypi/pyversions/wyngthon.svg?style=for-the-badge" alt="Python">
 </a>
 
-<a href="LICENSE">
+<a href="https://github.com/P3dro-Im/Wyngthon/blob/main/LICENSE">
   <img src="https://img.shields.io/github/license/P3dro-Im/Wyngthon?style=for-the-badge" alt="License">
 </a>
 
@@ -176,7 +176,7 @@ https://p3dro-im.github.io/Wyngthon/
 
 این پروژه تحت مجوز **GNU GPL v3** منتشر شده است.
 
-این پروژه در ابتدا فورکی از [SPlusthon](https://github.com/shayanheidari01/SPlusthon) ساخته‌ی Shayan Heidari (مجوز GPLv3) بوده و بخش‌هایی از آن از **Telethon** (مجوز MIT) گرفته شده است؛ جزئیات در فایل [NOTICE](NOTICE) آمده است.
+این پروژه در ابتدا فورکی از [SPlusthon](https://github.com/shayanheidari01/SPlusthon) ساخته‌ی Shayan Heidari (مجوز GPLv3) بوده و بخش‌هایی از آن از **Telethon** (مجوز MIT) گرفته شده است؛ جزئیات در فایل [NOTICE](https://github.com/P3dro-Im/Wyngthon/blob/main/NOTICE) آمده است.
 
 ---
 
